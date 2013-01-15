@@ -1,0 +1,629 @@
+[
+    {
+        "pk": "casa", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "domicilio", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "edificio", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "empresa", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "familia", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "firma", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "lar", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "liñaxe", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "morada", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "vivenda", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "casar", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "divorciarse", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "separarse", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": 1, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "S", 
+            "pos": "(noun)"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "S", 
+            "pos": ""
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "S", 
+            "pos": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "S", 
+            "pos": ""
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "A", 
+            "pos": ""
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "casa", 
+            "relationship": 1, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "domicilio", 
+            "relationship": 1, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "lar", 
+            "relationship": 1, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "morada", 
+            "relationship": 1, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "vivenda", 
+            "relationship": 1, 
+            "note": "generic word"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "casa", 
+            "relationship": 2, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "edificio", 
+            "relationship": 2, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "casa", 
+            "relationship": 3, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "familia", 
+            "relationship": 3, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "liñaxe", 
+            "relationship": 3, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "casa", 
+            "relationship": 4, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "empresa", 
+            "relationship": 4, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "firma", 
+            "relationship": 4, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "casar", 
+            "relationship": 5, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "divorciarse", 
+            "relationship": 5, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "word": "separarse", 
+            "relationship": 5, 
+            "note": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_group", 
+            "name": "Can add group", 
+            "content_type": [
+                "auth", 
+                "group"
+            ]
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_group", 
+            "name": "Can change group", 
+            "content_type": [
+                "auth", 
+                "group"
+            ]
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_group", 
+            "name": "Can delete group", 
+            "content_type": [
+                "auth", 
+                "group"
+            ]
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_message", 
+            "name": "Can add message", 
+            "content_type": [
+                "auth", 
+                "message"
+            ]
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_message", 
+            "name": "Can change message", 
+            "content_type": [
+                "auth", 
+                "message"
+            ]
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_message", 
+            "name": "Can delete message", 
+            "content_type": [
+                "auth", 
+                "message"
+            ]
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_permission", 
+            "name": "Can add permission", 
+            "content_type": [
+                "auth", 
+                "permission"
+            ]
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_permission", 
+            "name": "Can change permission", 
+            "content_type": [
+                "auth", 
+                "permission"
+            ]
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_permission", 
+            "name": "Can delete permission", 
+            "content_type": [
+                "auth", 
+                "permission"
+            ]
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_user", 
+            "name": "Can add user", 
+            "content_type": [
+                "auth", 
+                "user"
+            ]
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_user", 
+            "name": "Can change user", 
+            "content_type": [
+                "auth", 
+                "user"
+            ]
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_user", 
+            "name": "Can delete user", 
+            "content_type": [
+                "auth", 
+                "user"
+            ]
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_contenttype", 
+            "name": "Can add content type", 
+            "content_type": [
+                "contenttypes", 
+                "contenttype"
+            ]
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_contenttype", 
+            "name": "Can change content type", 
+            "content_type": [
+                "contenttypes", 
+                "contenttype"
+            ]
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_contenttype", 
+            "name": "Can delete content type", 
+            "content_type": [
+                "contenttypes", 
+                "contenttype"
+            ]
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_session", 
+            "name": "Can add session", 
+            "content_type": [
+                "sessions", 
+                "session"
+            ]
+        }
+    }, 
+    {
+        "pk": 17, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_session", 
+            "name": "Can change session", 
+            "content_type": [
+                "sessions", 
+                "session"
+            ]
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_session", 
+            "name": "Can delete session", 
+            "content_type": [
+                "sessions", 
+                "session"
+            ]
+        }
+    }, 
+    {
+        "pk": 19, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_site", 
+            "name": "Can add site", 
+            "content_type": [
+                "sites", 
+                "site"
+            ]
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_site", 
+            "name": "Can change site", 
+            "content_type": [
+                "sites", 
+                "site"
+            ]
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_site", 
+            "name": "Can delete site", 
+            "content_type": [
+                "sites", 
+                "site"
+            ]
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_relationship", 
+            "name": "Can add relationship", 
+            "content_type": [
+                "thesaurus", 
+                "relationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_relationship", 
+            "name": "Can change relationship", 
+            "content_type": [
+                "thesaurus", 
+                "relationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 27, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_relationship", 
+            "name": "Can delete relationship", 
+            "content_type": [
+                "thesaurus", 
+                "relationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 22, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_word", 
+            "name": "Can add word", 
+            "content_type": [
+                "thesaurus", 
+                "word"
+            ]
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_word", 
+            "name": "Can change word", 
+            "content_type": [
+                "thesaurus", 
+                "word"
+            ]
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_word", 
+            "name": "Can delete word", 
+            "content_type": [
+                "thesaurus", 
+                "word"
+            ]
+        }
+    }, 
+    {
+        "pk": 28, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_wordsforrelationship", 
+            "name": "Can add words for relationship", 
+            "content_type": [
+                "thesaurus", 
+                "wordsforrelationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_wordsforrelationship", 
+            "name": "Can change words for relationship", 
+            "content_type": [
+                "thesaurus", 
+                "wordsforrelationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_wordsforrelationship", 
+            "name": "Can delete words for relationship", 
+            "content_type": [
+                "thesaurus", 
+                "wordsforrelationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "usuario", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2013-01-12 07:16:39", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$fa404$eb4497d96769f43b3cd88613975232d4e1679776", 
+            "email": "leandro.regueiro@gmail.com", 
+            "date_joined": "2013-01-12 07:16:39"
+        }
+    }
+]
