@@ -19,4 +19,9 @@
 jQuery(document).ready(function () {
     // Enable tooltips.
     $("[rel=tooltip]").tooltip();
+    
+    // Put the focus on the search field when hitting the F key.
+    jQuery(document).bind('keyup', 'f', function(event) {
+        jQuery('.form-search > #appendedInputButton').focus();
+    });
 });
