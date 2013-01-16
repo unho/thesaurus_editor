@@ -31,8 +31,7 @@ body {
 }
 
 
-
-
+/* Styles for the search results */
 .bs-docs-sidenav {
     margin: 0 0 30px 0;
     padding: 0;
@@ -76,18 +75,9 @@ body {
     box-shadow: inset 1px 0 0 rgba(0,0,0,.1), inset -1px 0 0 rgba(0,0,0,.1);
 }
 
-
-/* Chevrons */
 .bs-docs-sidenav > li > a:hover {
     background-color: #f5f5f5;
 }
-
-.bs-docs-sidenav > li > a .category {
-    color: gray;
-    font-size: .8em;
-}
-
-
 
 
 /* Help styles */
@@ -119,6 +109,7 @@ body {
 }
 
 
+/* Styles for synonyms, antonyms and related words lists */
 .synonyms, .antonyms, .related {
     background-color: #eee;
     -webkit-border-radius: 6px;
@@ -131,11 +122,11 @@ body {
     border: 1px solid #e5e5e5;
 }
 
-.related-words > li {
+.meanings > li {
     list-style: none;
 }
 
-.related-words span.word {
+.meanings span.word {
     display: inline-block
     height: 24px;
     line-height: 24px;
@@ -157,7 +148,7 @@ body {
     cursor: pointer;
 }
 
-.related-words span.word:before {
+.meanings span.word:before {
     content: "";
     float: left;
     position: absolute;
@@ -170,7 +161,7 @@ body {
     border-width: 12px 12px 12px 0;
 }
 
-.related-words span.word:after {
+.meanings span.word:after {
     content: "";
     position: absolute;
     top: 10px;
@@ -187,29 +178,12 @@ body {
     box-shadow: -1px -1px 2px #004977;
 }
 
-/*.related-words span.word:hover{background:#4bb9ff;}*/
-/*.related-words span.word:hover:before{border-color:transparent #4bb9ff transparent transparent;}*/
+/*.meanings span.word:hover{background:#4bb9ff;}*/
+/*.meanings span.word:hover:before{border-color:transparent #4bb9ff transparent transparent;}*/
 
-.related-words span.word i {
+.meanings span.word i {
     margin-left: 10px;
 }
-
-
-
-.right {
-    text-align: right;
-}
-
-.list-item .btn-toolbar {
-    display: none;
-    margin: 0 !important;
-}
-
-.list-item:hover .btn-toolbar {
-    display: block;
-    max-height: 10px;
-}
-
 
 
 /* Copyright styles */
@@ -233,7 +207,30 @@ body {
 }
 
 
+/* Container and content styles */
+.container-fluid {
+    padding-left: 0;
+}
 
+#word-content {
+    padding: 20px;
+    margin-left: 100px;
+}
+
+#word-content .word-header {
+    margin-bottom: 15px
+}
+
+#word-content .word-header h2 {
+    margin: 0 0 15px 0;
+}
+
+#word-content .word-header h4 {
+    margin-bottom: 0;
+}
+
+
+/* Loading styles */
 .loading {
     background: url(../img/ajax-loader.gif) top left no-repeat;
     margin: 0 auto;
@@ -245,73 +242,3 @@ body {
 }
 
 
-/* Sidebar styles */
-#sidebar {
-    position: fixed;
-    top: 40px;
-    bottom: 0;
-    left: 0;
-    width: 299px;
-    background-color: whiteSmoke;
-    border-right: 1px solid #E5E5E5;
-    overflow-y: scroll;
-}
-
-#sidebar > div {
-    position: relative
-}
-
-#sidebar .sidebar-header {
-    padding: 10px 10px;
-}
-
-#sidebar .word-list {
-    margin: 0;
-    list-style: none;
-    border-top: 1px solid #E5E5E5;
-    border-bottom: 1px solid white;
-}
-
-#sidebar .word-list .list-item {
-    display: block;
-    border-top: 1px solid white;
-    border-bottom: 1px solid #E5E5E5;
-    padding: 10px 10px;
-}
-
-#sidebar .word-list .list-item:hover {
-    text-decoration: none;
-    background-color: #F1F1F1;
-}
-
-#sidebar .word-list .load_more_button {
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    width: 90%;
-    background: #eee;
-    margin: 10px;
-}
-
-
-
-#word-content {
-    padding: 20px;
-    margin-left: 100px;/*TODO cambiado, antes era 300px  */
-}
-
-#word-content .word-header {
-/*    border-bottom: 1px solid #ccc;*/
-    margin-bottom: 15px
-}
-
-#word-content .word-header h4 {
-    margin-bottom: 0;
-}
-
-#word-content .word-header h2 {
-    margin: 0 0 15px 0;
-}
-
-.container-fluid {
-    padding-left: 0;
-}

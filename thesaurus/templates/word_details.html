@@ -23,7 +23,7 @@ along with Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% block content %}
 <div class="word-header clearfix">
     <h2 class="span5">{{ word.word }}</h2>
-    <div class="btn-toolbar pull-right right">
+    <div class="btn-toolbar pull-right">
         <div class="btn-group">
             <a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the previous word" %}"><i class="icon-chevron-left"></i></a>
             <a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the next word" %}"><i class="icon-chevron-right"></i></a>
@@ -35,7 +35,7 @@ along with Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
     <div class="span6">
         <h5>{% trans "Synonyms" %}</h5>
         <div class="synonyms clearfix">
-            <ul class="related-words">
+            <ul class="meanings">
             {% for relationship in word.retrieve_synonyms %}
                 <li><strong>Meaning {{ forloop.counter }}:</strong>
                 {% for related_word in relationship %}
@@ -63,7 +63,7 @@ along with Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
         
         <h5>{% trans "Antonyms" %}</h5>
         <div class="antonyms clearfix">
-            <ul class="related-words">
+            <ul class="meanings">
             {% for relationship in word.retrieve_antonyms %}
                 <li><strong>Meaning {{ forloop.counter }}:</strong>
                 
@@ -76,7 +76,7 @@ along with Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
         
         <h5>{% trans "Related" %}</h5>
         <div class="related clearfix">
-            <ul class="related-words">
+            <ul class="meanings">
             {% for relationship in word.retrieve_related_words %}
                 <li><strong>Meaning {{ forloop.counter }}:</strong>
                 
