@@ -100,8 +100,10 @@ along with Thesaurus-editor.  If not, see <http://www.gnu.org/licenses/>.
 
 
                 <div class="input-append">
-                    <input class="span5" id="appendedInputButton" type="text" placeholder="Search for a word...">
-                    <button class="btn" type="button">Search</button>
+                    <form class="form-search">
+                        <input type="search" class="input-medium" id="appendedInputButton" placeholder="{% trans "Search for a word..." %}">
+                        <button type="submit" class="btn">{% trans "Search" %}</button>
+                    </form>
                 </div>
                 
                 
