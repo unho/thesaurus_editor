@@ -37,8 +37,8 @@ urlpatterns = patterns('thesaurus.views',
     
     #TODO add new word
     
-    url(r'^import/$', 
-        'import_words', 
+    url(r'^import/$',
+        'import_words',
         name='thesaurus_import'
     ),
     
@@ -51,12 +51,12 @@ urlpatterns = patterns('thesaurus.views',
     ),
     
     
-    url(r'^export/$', 
-        'export', 
+    url(r'^export/$',
+        'export',
         name='thesaurus_export'
     ),
-    url(r'^help/$', 
-        TemplateView.as_view(template_name="help.html"), 
+    url(r'^help/$',
+        TemplateView.as_view(template_name="help.html"),
         name='thesaurus_help'
     ),
 )
