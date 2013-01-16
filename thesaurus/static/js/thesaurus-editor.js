@@ -36,13 +36,13 @@ jQuery(document).ready(function () {
     }
     
     // Trigger search when hitting on the search form button.
-    jQuery(".form-search > button").click(function(e) {
-        e.preventDefault();
+    jQuery(".form-search > button").click(function(event) {
+        event.preventDefault();
         ajax_search(jQuery(".form-search > #appendedInputButton").val());
     });
     
     // Trigger live search when 3 or more characters have been typed.
-    jQuery(".form-search > input[type=search]").keyup(function(e) {
+    jQuery(".form-search > input[type=search]").keyup(function(event) {
         word = jQuery(".form-search > #appendedInputButton").val();
         if (word.length > 2) {
             ajax_search(word);
