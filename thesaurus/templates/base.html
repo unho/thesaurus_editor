@@ -24,8 +24,8 @@ along with Thesaurus-editor.  If not, see <http://www.gnu.org/licenses/>.
     <link href="{{ STATIC_PREFIX }}css/styles.css" rel="stylesheet" />
 </head>
 <body class="body-with-tool-bar" data-offset="100">
-
-
+    
+    
     <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
             <a class="brand" href="{% url thesaurus_home %}">{% trans "Thesaurus editor" %}</a>
@@ -42,7 +42,7 @@ along with Thesaurus-editor.  If not, see <http://www.gnu.org/licenses/>.
             </div>
         </div>
     </div>
-
+    
     <div class="container-fluid">
        <div class="row-fluid">
             {% block sidebar %}{% endblock %}
