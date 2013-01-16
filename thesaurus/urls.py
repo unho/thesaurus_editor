@@ -41,6 +41,10 @@ urlpatterns = patterns('thesaurus.views',
         'import_words',
         name='thesaurus_import'
     ),
+    url(r'^search/$',
+        'ajax_search',
+        name='thesaurus_search'
+    ),
     
     #TODO terms of service
     

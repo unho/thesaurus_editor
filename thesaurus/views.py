@@ -87,4 +87,15 @@ def delete_word_from_relationship(request, relationship, word):
     return render_to_response('export.txt', context)
 
 
+def ajax_search(request):
+    word = request.GET.get('word')
+    if word is not None:
+        search_results = Word.objects.filter(word__contains=word)
+        context = {'search_results': search_results}
+    else:
+        context = {'search_results': []}
+    return render_to_response('search_results.html', context,
+                              context_instance=RequestContext(request))
+
+
 

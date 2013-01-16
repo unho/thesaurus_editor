@@ -24,4 +24,32 @@ jQuery(document).ready(function () {
     jQuery(document).bind('keyup', 'f', function(event) {
         jQuery('.form-search > #appendedInputButton').focus();
     });
+    
+    // Get the search results and show them.
+    function ajax_search(word) {
+        if (word) {
+            jQuery("#results-list").load("/search/?word=" + word);
+            
+            // Enable tooltips again, since new buttons are loaded.
+            $("[rel=tooltip]").tooltip();
+        };
+    }
+    
+    // Trigger search when hitting on the search form button.
+    jQuery(".form-search > button").click(function(e) {
+        e.preventDefault();
+        ajax_search(jQuery(".form-search > #appendedInputButton").val());
+    });
+    
+    // Trigger live search when 3 or more characters have been typed.
+    jQuery(".form-search > input[type=search]").keyup(function(e) {
+        word = jQuery(".form-search > #appendedInputButton").val();
+        if (word.length > 2) {
+            ajax_search(word);
+        }
+        else if (!word) {
+            // Cleanup the search results if the search field is blank.
+            jQuery("#results-list").html("");
+        };
+    });
 });
