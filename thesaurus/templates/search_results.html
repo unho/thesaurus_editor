@@ -17,8 +17,8 @@ You should have received a copy of the GNU General Public License
 along with Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}{% for result in search_results %}
     <li{% if forloop.first %}  class="active"{% endif %}>
-        <a href="#">{{ result.word }}{% if forloop.first %}
-            <div class="btn-group pull-right">{% comment %}
+        <a href="#">{{ result.word }}
+            <div class="btn-group pull-right{% if not forloop.first %} hide{% endif %}">{% comment %}"
 <!--                <a href="#" class="btn btn-mini" rel="tooltip" data-placement="bottom" title="{% trans "Add this as synonym" %}">S</a>-->
 <!--                <a href="#" class="btn btn-mini" rel="tooltip" data-placement="bottom" title="{% trans "Add this as antonym" %}">A</a>-->
 <!--                <a href="#" class="btn btn-mini" rel="tooltip" data-placement="bottom" title="{% trans "Add this as a related word" %}">R</a>-->{% endcomment %}
@@ -26,6 +26,6 @@ along with Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                 <button type="button" class="btn btn-mini" rel="tooltip" data-placement="bottom" title="{% trans "Add this as antonym" %}">A</button>
                 <button type="button" class="btn btn-mini" rel="tooltip" data-placement="bottom" title="{% trans "Add this as a related word" %}">R</button>
             </div>
-        {% endif %}</a>
+        </a>
     </li>{% empty %}
     <li class="search_result">{% trans "No results are available." %}</li>{% endfor %}

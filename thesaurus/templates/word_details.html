@@ -22,7 +22,7 @@ along with Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 
 {% block content %}
 <div class="word-header clearfix">
-    <h2 class="span5">{{ word.word }}</h2>
+    <h2 id="current-word" class="span5">{{ word.word }}</h2>
     <div class="btn-toolbar pull-right">
         <div class="btn-group">
             <a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the previous word" %}"><i class="icon-chevron-left"></i></a>
