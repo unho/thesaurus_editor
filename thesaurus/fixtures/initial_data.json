@@ -65,6 +65,46 @@
         "fields": {}
     }, 
     {
+        "pk": "laranxa", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "laranxeiro", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "laranxal", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "laranxada", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "moral", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "moralista", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "moralismo", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "moralizante", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
         "pk": 1, 
         "model": "thesaurus.relationship", 
         "fields": {
