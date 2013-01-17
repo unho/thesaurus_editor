@@ -35,54 +35,21 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
         <h5>{% trans "Synonyms" %}</h5>
         <div id="synonyms" class="clearfix">
             <ul class="meanings">
-            {% for relationship in word.retrieve_synonyms %}
-                <li><strong>Meaning {{ forloop.counter }}:</strong>
-                {% for related_word in relationship %}
-                    <span class="word"><a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }} 
-                    
-                    {% comment %}
-                    <!--<a href="{% url thesaurus_delete_word_from_relationship relationship=relationship.pk word=related_word.pk %}">-->
-                    <!-- TODO o problema con esta ligazón é que non conseguimos obter a clave da relación para poder eliminar a palabra da relación -->
-                    {% endcomment %}
-                    
-                    <i class="icon-trash icon-white"></i>
-                    
-                    {% comment %}<!--</a>-->
-                    {% endcomment %}
-                    
-                    
-                    </a></span>
-                {% endfor %}
-                </li>
-            {% empty %}
-                <li class="muted">{{ word.word }} has no synonyms.</li>
-            {% endfor %}
+            {% include "synonyms_snippet.html" %}
             </ul>
         </div>
         
         <h5>{% trans "Antonyms" %}</h5>
         <div id="antonyms" class="clearfix">
             <ul class="meanings">
-            {% for relationship in word.retrieve_antonyms %}
-                <li><strong>Meaning {{ forloop.counter }}:</strong>
-                
-                </li>
-            {% empty %}
-                <li class="muted">{{ word.word }} has no antonyms.</li>
-            {% endfor %}
+            {% include "antonyms_snippet.html" %}
             </ul>
         </div>
         
         <h5>{% trans "Related" %}</h5>
         <div id="related-words" class="clearfix">
             <ul class="meanings">
-            {% for relationship in word.retrieve_related_words %}
-                <li><strong>Meaning {{ forloop.counter }}:</strong>
-                
-                </li>
-            {% empty %}
-                <li class="muted">{{ word.word }} has no related words.</li>
-            {% endfor %}
+            {% include "related_words_snippet.html" %}
             </ul>
         </div>
         

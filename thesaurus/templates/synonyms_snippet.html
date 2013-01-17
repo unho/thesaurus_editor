@@ -1,0 +1,37 @@
+{% load i18n %}{% comment %}
+Copyright 2013 Leandro Regueiro
+
+This file is part of Thesaurus-editor.
+
+Thesaurus-editor is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+Thesaurus-editor is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
+{% endcomment %}{% for relationship in word.retrieve_synonyms %}
+    <li><strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}:{% endblocktrans %}</strong>
+    {% for related_word in relationship %}
+        <span class="word"><a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }} 
+        
+        {% comment %}
+        <!--<a href="{% url thesaurus_delete_word_from_relationship relationship=relationship.pk word=related_word.pk %}">-->
+        <!-- TODO the problem with this link is that it seems impossible to get the relationship pk for removing the word from the relationship -->
+        {% endcomment %}
+        
+        <i class="icon-trash icon-white"></i>
+        
+        {% comment %}<!--</a>-->
+        {% endcomment %}
+        
+        </a></span>
+    {% endfor %}
+    </li>
+{% empty %}
+    <li class="muted">{% blocktrans with word=word.word %}{{ word }} has no synonyms.{% endblocktrans %}</li>
+{% endfor %}
