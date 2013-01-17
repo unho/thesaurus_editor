@@ -109,7 +109,7 @@ body {
 
 
 /* Styles for synonyms, antonyms and related words lists */
-.synonyms, .antonyms, .related {
+#synonyms, #antonyms, #related-words {
     background-color: #eee;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
