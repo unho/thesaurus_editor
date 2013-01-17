@@ -19,9 +19,9 @@
 
 import datetime
 
-from django.shortcuts import render_to_response#, get_list_or_404, get_object_or_404, Http404
+from django.shortcuts import render_to_response, Http404#, get_list_or_404, get_object_or_404
 #from django.views.generic import DetailView, ListView, TemplateView
-from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.csrf import csrf_protect, ensure_csrf_cookie
 from django.db import transaction
 from django.template import loader, Context, RequestContext
 from django.http import HttpResponse
@@ -96,6 +96,42 @@ def ajax_search(request):
         context = {'search_results': []}
     return render_to_response('search_results.html', context,
                               context_instance=RequestContext(request))
+
+
+@ensure_csrf_cookie
+def create_relationship(request):
+    if not request.method == 'POST':
+        raise Http404
+    relationship_type = request.POST.get('type')
+    word = request.POST.get('word')
+    new_word = request.POST.get('new_word')
+    
+    if (relationship_type is not None and word is not None and
+        new_word is not None):
+        # Get the objects corresponding to the word
+        word_object = Word.objects.get(word=word)
+        new_word_object = Word.objects.get(word=new_word)
+        
+        # Get the relationship type
+        if relationship_type == "synonyms":
+            rel_type="S"
+        elif relationship_type == "antonyms":
+            rel_type="A"
+        else:
+            rel_type="R"
+        # Create a new relationship
+        rel = Relationship(relationship_type=rel_type)
+        rel.save()
+        
+        # Add the words to the new relationship
+        WordsForRelationship(relationship=rel, word=word_object).save()
+        WordsForRelationship(relationship=rel, word=new_word_object).save()
+        
+        context = {'word': word_object}
+        return render_to_response(relationship_type + '_snippet.html', context,
+                                  context_instance=RequestContext(request))
+    else:
+        raise Http404
 
 
 

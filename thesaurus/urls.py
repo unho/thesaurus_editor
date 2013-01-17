@@ -34,9 +34,10 @@ urlpatterns = patterns('thesaurus.views',
         context_object_name = "word",
         template_name="word_details.html",
     ), name='thesaurus_word'),
-    
-    #TODO add new word
-    
+    url(r'^relationships/create/$',
+        'create_relationship',
+        name='thesaurus_create_relationship'
+    ),
     url(r'^import/$',
         'import_words',
         name='thesaurus_import'

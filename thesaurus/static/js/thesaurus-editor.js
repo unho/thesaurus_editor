@@ -17,6 +17,20 @@
 
 
 jQuery(document).ready(function () {
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    
+    $.ajaxSetup({
+        crossDomain: false, // obviates need for sameOrigin test
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type)) {
+                xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+            }
+        }
+    });
+    
     // Enable tooltips.
     $("[rel=tooltip]").tooltip();
     
@@ -119,6 +133,52 @@ jQuery(document).ready(function () {
             // Make active the previous search result and show its buttons.
             previous.prev("li").addClass("active").find("div")
                 .removeClass("hide");
+        };
+    });
+    
+    // Add a new meaning with a new word.
+    function add_new_meaning(type) {
+        // Get the word in which entry are we working right now
+        var word = jQuery("#current-word").text().trim();
+        
+        // Get the active word
+        var new_word = jQuery("#results-list > li.active > a").contents()
+            .first().text().trim();
+        
+        // Create a new meaning for the current word adding the active word
+        // in the meaning, and then refresh all the meanings for this type.
+        // type can be "synonyms", "antonyms" or "related".
+        jQuery.post("/relationships/create/",
+                    {type: type, word: word, new_word: new_word},
+                    function(data) {
+            jQuery("#" + type + " > ul.meanings").html(data);
+        });
+    }
+    
+    // Add the active word from the search results list as new synonym in a new
+    // synonym meaning using the keyboard.
+    jQuery(document).bind('keyup', 's', function(event) {
+        // If the focus is not in the search field.
+        if (jQuery(".form-search > input[type=search]").is(":not(:focus)")) {
+            add_new_meaning("synonyms");
+        };
+    });
+    
+    // Add the active word from the search results list as new antonym in a new
+    // antonym meaning using the keyboard.
+    jQuery(document).bind('keyup', 'a', function(event) {
+        // If the focus is not in the search field.
+        if (jQuery(".form-search > input[type=search]").is(":not(:focus)")) {
+            add_new_meaning("antonyms");
+        };
+    });
+    
+    // Add the active word from the search results list as new related word in
+    // a new related word meaning using the keyboard.
+    jQuery(document).bind('keyup', 'r', function(event) {
+        // If the focus is not in the search field.
+        if (jQuery(".form-search > input[type=search]").is(":not(:focus)")) {
+            add_new_meaning("related-words");
         };
     });
 });
