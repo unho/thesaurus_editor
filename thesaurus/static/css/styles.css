@@ -180,6 +180,10 @@ body {
 /*.meanings span.word:hover{background:#4bb9ff;}*/
 /*.meanings span.word:hover:before{border-color:transparent #4bb9ff transparent transparent;}*/
 
+.meanings span.word a {
+    color: white;
+}
+
 .meanings span.word i {
     margin-left: 10px;
 }
