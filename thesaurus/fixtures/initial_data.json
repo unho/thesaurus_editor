@@ -105,6 +105,56 @@
         "fields": {}
     }, 
     {
+        "pk": "mora", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "morador", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "morado", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "morar", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "vivir", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "residir", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "habitar", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "deshabitar", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "morsa", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
+        "pk": "morse", 
+        "model": "thesaurus.word", 
+        "fields": {}
+    }, 
+    {
         "pk": 1, 
         "model": "thesaurus.relationship", 
         "fields": {
@@ -289,78 +339,6 @@
         }
     }, 
     {
-        "pk": 4, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "add_group", 
-            "name": "Can add group", 
-            "content_type": [
-                "auth", 
-                "group"
-            ]
-        }
-    }, 
-    {
-        "pk": 5, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "change_group", 
-            "name": "Can change group", 
-            "content_type": [
-                "auth", 
-                "group"
-            ]
-        }
-    }, 
-    {
-        "pk": 6, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "delete_group", 
-            "name": "Can delete group", 
-            "content_type": [
-                "auth", 
-                "group"
-            ]
-        }
-    }, 
-    {
-        "pk": 10, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "add_message", 
-            "name": "Can add message", 
-            "content_type": [
-                "auth", 
-                "message"
-            ]
-        }
-    }, 
-    {
-        "pk": 11, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "change_message", 
-            "name": "Can change message", 
-            "content_type": [
-                "auth", 
-                "message"
-            ]
-        }
-    }, 
-    {
-        "pk": 12, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "delete_message", 
-            "name": "Can delete message", 
-            "content_type": [
-                "auth", 
-                "message"
-            ]
-        }
-    }, 
-    {
         "pk": 1, 
         "model": "auth.permission", 
         "fields": {
@@ -393,6 +371,42 @@
             "content_type": [
                 "auth", 
                 "permission"
+            ]
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_group", 
+            "name": "Can add group", 
+            "content_type": [
+                "auth", 
+                "group"
+            ]
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_group", 
+            "name": "Can change group", 
+            "content_type": [
+                "auth", 
+                "group"
+            ]
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_group", 
+            "name": "Can delete group", 
+            "content_type": [
+                "auth", 
+                "group"
             ]
         }
     }, 
@@ -433,7 +447,7 @@
         }
     }, 
     {
-        "pk": 13, 
+        "pk": 10, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_contenttype", 
@@ -445,7 +459,7 @@
         }
     }, 
     {
-        "pk": 14, 
+        "pk": 11, 
         "model": "auth.permission", 
         "fields": {
             "codename": "change_contenttype", 
@@ -457,7 +471,7 @@
         }
     }, 
     {
-        "pk": 15, 
+        "pk": 12, 
         "model": "auth.permission", 
         "fields": {
             "codename": "delete_contenttype", 
@@ -469,7 +483,7 @@
         }
     }, 
     {
-        "pk": 16, 
+        "pk": 13, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_session", 
@@ -481,7 +495,7 @@
         }
     }, 
     {
-        "pk": 17, 
+        "pk": 14, 
         "model": "auth.permission", 
         "fields": {
             "codename": "change_session", 
@@ -493,7 +507,7 @@
         }
     }, 
     {
-        "pk": 18, 
+        "pk": 15, 
         "model": "auth.permission", 
         "fields": {
             "codename": "delete_session", 
@@ -505,7 +519,7 @@
         }
     }, 
     {
-        "pk": 19, 
+        "pk": 16, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_site", 
@@ -517,7 +531,7 @@
         }
     }, 
     {
-        "pk": 20, 
+        "pk": 17, 
         "model": "auth.permission", 
         "fields": {
             "codename": "change_site", 
@@ -529,7 +543,7 @@
         }
     }, 
     {
-        "pk": 21, 
+        "pk": 18, 
         "model": "auth.permission", 
         "fields": {
             "codename": "delete_site", 
@@ -541,43 +555,7 @@
         }
     }, 
     {
-        "pk": 25, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "add_relationship", 
-            "name": "Can add relationship", 
-            "content_type": [
-                "thesaurus", 
-                "relationship"
-            ]
-        }
-    }, 
-    {
-        "pk": 26, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "change_relationship", 
-            "name": "Can change relationship", 
-            "content_type": [
-                "thesaurus", 
-                "relationship"
-            ]
-        }
-    }, 
-    {
-        "pk": 27, 
-        "model": "auth.permission", 
-        "fields": {
-            "codename": "delete_relationship", 
-            "name": "Can delete relationship", 
-            "content_type": [
-                "thesaurus", 
-                "relationship"
-            ]
-        }
-    }, 
-    {
-        "pk": 22, 
+        "pk": 19, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_word", 
@@ -589,7 +567,7 @@
         }
     }, 
     {
-        "pk": 23, 
+        "pk": 20, 
         "model": "auth.permission", 
         "fields": {
             "codename": "change_word", 
@@ -601,7 +579,7 @@
         }
     }, 
     {
-        "pk": 24, 
+        "pk": 21, 
         "model": "auth.permission", 
         "fields": {
             "codename": "delete_word", 
@@ -613,7 +591,43 @@
         }
     }, 
     {
-        "pk": 28, 
+        "pk": 22, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "add_relationship", 
+            "name": "Can add relationship", 
+            "content_type": [
+                "thesaurus", 
+                "relationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "change_relationship", 
+            "name": "Can change relationship", 
+            "content_type": [
+                "thesaurus", 
+                "relationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "auth.permission", 
+        "fields": {
+            "codename": "delete_relationship", 
+            "name": "Can delete relationship", 
+            "content_type": [
+                "thesaurus", 
+                "relationship"
+            ]
+        }
+    }, 
+    {
+        "pk": 25, 
         "model": "auth.permission", 
         "fields": {
             "codename": "add_wordsforrelationship", 
@@ -625,7 +639,7 @@
         }
     }, 
     {
-        "pk": 29, 
+        "pk": 26, 
         "model": "auth.permission", 
         "fields": {
             "codename": "change_wordsforrelationship", 
@@ -637,7 +651,7 @@
         }
     }, 
     {
-        "pk": 30, 
+        "pk": 27, 
         "model": "auth.permission", 
         "fields": {
             "codename": "delete_wordsforrelationship", 
@@ -658,12 +672,12 @@
             "is_active": true, 
             "is_superuser": true, 
             "is_staff": true, 
-            "last_login": "2013-01-12 07:16:39", 
+            "last_login": "2013-01-17T13:25:31", 
             "groups": [], 
             "user_permissions": [], 
-            "password": "sha1$fa404$eb4497d96769f43b3cd88613975232d4e1679776", 
+            "password": "pbkdf2_sha256$10000$3dAnRSbcjBZM$oFT0xGt/gZyeeXb1mhK6ywxLZlArm5/cxlUB67rFUz8=", 
             "email": "leandro.regueiro@gmail.com", 
-            "date_joined": "2013-01-12 07:16:39"
+            "date_joined": "2013-01-17T13:25:31"
         }
     }
 ]
