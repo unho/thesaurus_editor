@@ -64,7 +64,7 @@ jQuery(document).ready(function () {
         // is pressed.
         if (event.which != 37 && event.which != 38 && event.which != 39 &&
                 event.which != 40) {
-            word = jQuery(".form-search > #appendedInputButton").val();
+            var word = jQuery(".form-search > #appendedInputButton").val();
             // Trigger live search when 3 or more characters have been typed.
             if (word.length > 2) {
                 ajax_search(word);
@@ -89,7 +89,7 @@ jQuery(document).ready(function () {
         // Only trigger if the active row is not the last one in the results.
         if (jQuery("#results-list > li.active").is(":not(:last-child)")) {
             // Remove previous active search result its active status.
-            previous = jQuery("#results-list > li.active")
+            var previous = jQuery("#results-list > li.active")
                 .removeClass("active");
             // Hide previous active search result buttons.
             previous.find("div").addClass("hide");
@@ -112,7 +112,7 @@ jQuery(document).ready(function () {
         // Only trigger if the active row is not the first one in the results.
         if (jQuery("#results-list > li.active").is(":not(:first-child)")) {
             // Remove previous active search result its active status.
-            previous = jQuery("#results-list > li.active")
+            var previous = jQuery("#results-list > li.active")
                 .removeClass("active");
             // Hide previous active search result buttons.
             previous.find("div").addClass("hide");
