@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% comment %}
+Copyright 2013 Leandro Regueiro
+
+This file is part of Thesaurus-editor.
+
+Thesaurus-editor is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+Thesaurus-editor is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
+{% endcomment %}
+
+
+{% block content %}
+    <div class="word-header clearfix">
+        <h2 class="span5">{% trans "Error 500: Internal error" %}</h2>
+    </div>
+
+    <div class="row-fluid clearfix">
+        <div class="span6">
+            <p>{% blocktrans %}The droids you are looking for just exploded due to a fatal internal error. What a pity!{% endblocktrans %}</p>
+        </div>
+    </div>
+    
+{% endblock %}
