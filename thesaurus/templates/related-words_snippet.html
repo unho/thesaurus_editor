@@ -20,7 +20,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
         <span class="word"><a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }} 
         
         {% comment %}
-        <!--<a href="{% url thesaurus_delete_word_from_relationship relationship=relationship.pk word=related_word.pk %}">-->
+        <!--<a href="{% url thesaurus_remove_word_from_relationship relationship=relationship.pk word=related_word.pk %}">-->
         <!-- TODO the problem with this link is that it seems impossible to get the relationship pk for removing the word from the relationship -->
         {% endcomment %}
         

@@ -38,31 +38,33 @@ urlpatterns = patterns('thesaurus.views',
         'create_relationship',
         name='thesaurus_create_relationship'
     ),
-    url(r'^import/$',
-        'import_words',
-        name='thesaurus_import'
+    #TODO delete relationship
+    #url(r'^relationships/(?P<relationship>\w+)/delete/$',
+    #    'delete_relationship', 
+    #    name='thesaurus_delete_relationship'
+    #),
+    #TODO add word to existing relationship
+    #TODO delete word from existing relationship
+    url(r'^relationships/(?P<relationship>\w+)/remove/(?P<word>\w+)/$',
+        'delete_word_from_relationship', 
+        name='thesaurus_remove_word_from_relationship'
     ),
     url(r'^search/$',
         'ajax_search',
         name='thesaurus_search'
     ),
-    
-    #TODO terms of service
-    
-    #TODO delete word from relationship
-    url(r'^delete/(?P<relationship>\w+)/(?P<word>\w+)/$',
-        'delete_word_from_relationship', 
-        name='thesaurus_delete_word_from_relationship'
-    ),
-    
-    
     url(r'^export/$',
         'export',
         name='thesaurus_export'
+    ),
+    url(r'^import/$',
+        'import_words',
+        name='thesaurus_import'
     ),
     url(r'^help/$',
         TemplateView.as_view(template_name="help.html"),
         name='thesaurus_help'
     ),
+    #TODO terms of service
 )
 
