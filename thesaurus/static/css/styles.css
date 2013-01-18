@@ -177,8 +177,13 @@ body {
     box-shadow: -1px -1px 2px #004977;
 }
 
-/*.meanings span.word:hover{background:#4bb9ff;}*/
-/*.meanings span.word:hover:before{border-color:transparent #4bb9ff transparent transparent;}*/
+.meanings span.word:hover {
+    background: #1af;
+}
+
+.meanings span.word:hover:before {
+    border-color: transparent #1af transparent transparent;
+}
 
 .meanings span.word a {
     color: white;
