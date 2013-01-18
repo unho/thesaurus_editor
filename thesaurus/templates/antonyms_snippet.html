@@ -15,9 +15,9 @@ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with
 Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}{% for relationship in word.retrieve_antonyms %}
-    <li><strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}:{% endblocktrans %}</strong>
-    {% for related_word in relationship %}
-        <span class="word"><a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }} 
+    <li id="{{ relationship.pk }}"><strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}:{% endblocktrans %}</strong>
+    {% for related_word in relationship.words %}
+        <span class="word"><a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }}
         
         {% comment %}
         <!--<a href="{% url thesaurus_remove_word_from_relationship relationship=relationship.pk word=related_word.pk %}">-->

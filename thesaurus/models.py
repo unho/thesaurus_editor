@@ -52,7 +52,7 @@ class Word(models.Model):
         for relationship in self.relationship_set.filter(relationship_type=relationship_type):
             #TODO export the relationship objects too, since it is neccessary for getting the part of speech.
             #TODO export the relationship intermediary table, since it is neccessary for getting the notes.
-            relationship_list.append(relationship.words.exclude(word=self))
+            relationship_list.append({"pk": relationship.pk, "words": relationship.words.exclude(word=self)})
         return relationship_list
     
     def retrieve_synonyms(self):
