@@ -89,5 +89,8 @@ class WordsForRelationship(models.Model):
     
     class Meta:
         unique_together = ("relationship", "word")
+    
+    def __unicode__(self):
+        return u"%(word)s --> %(relationship)s" % {"word": self.word, "relationship": self.relationship}
 
 
