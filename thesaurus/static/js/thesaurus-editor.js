@@ -42,7 +42,9 @@ jQuery(document).ready(function () {
     // Get the search results and show them.
     function ajax_search(word) {
         if (word) {
-            jQuery("#results-list").load("/search/?word=" + word);
+            var url = "/search/?word=" + word + "&current=" +
+                jQuery("#current-word").text().trim();
+            jQuery("#results-list").load(url);
             
             // Enable tooltips again, since new buttons are loaded.
             $("[rel=tooltip]").tooltip();
