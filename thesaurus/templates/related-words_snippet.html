@@ -17,19 +17,10 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}{% for relationship in word.retrieve_related_words %}
     <li id="{{ relationship.pk }}"><strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}:{% endblocktrans %}</strong>
     {% for related_word in relationship.words %}
-        <span class="word"><a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }}
-        
-        {% comment %}
-        <!--<a href="{% url thesaurus_remove_word_from_relationship relationship=relationship.pk word=related_word.pk %}">-->
-        <!-- TODO the problem with this link is that it seems impossible to get the relationship pk for removing the word from the relationship -->
-        {% endcomment %}
-        
-        <i class="icon-trash icon-white"></i>
-        
-        {% comment %}<!--</a>-->
-        {% endcomment %}
-        
-        </a></span>
+        <span class="word">
+            <a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }}</a>
+            <!--<a href="{% url thesaurus_remove_word_from_relationship relationship=relationship.pk word=related_word.pk %}">--><i class="icon-trash icon-white"></i><!--</a>-->
+        </span>
     {% endfor %}
     </li>
 {% empty %}
