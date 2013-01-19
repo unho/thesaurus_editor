@@ -19,7 +19,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                     <strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}:{% endblocktrans %}</strong>{% for related_word in relationship.words %}
                     <span class="word">
                         <a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }}</a>
-                        <!--<a href="{% url thesaurus_remove_word_from_relationship relationship=relationship.pk word=related_word.pk %}">--><i class="icon-trash icon-white"></i><!--</a>-->
+                        <i class="icon-trash icon-white"></i>
                     </span>{% endfor %}
                 </li>{% empty %}
                 <li class="muted">{% blocktrans with word=word.word %}{{ word }} has no antonyms.{% endblocktrans %}</li>
