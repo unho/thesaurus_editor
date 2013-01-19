@@ -104,11 +104,11 @@ def create_relationship(request):
     if not request.method == 'POST':
         raise Http404
     relationship_type = request.POST.get('type')
-    word = request.POST.get('word')
+    current = request.POST.get('current')
     new_word = request.POST.get('new_word')
     
     # Get the objects corresponding to the word
-    word_object = get_object_or_404(Word, word=word)
+    current_word_object = get_object_or_404(Word, word=current)
     new_word_object = get_object_or_404(Word, word=new_word)
     
     # Get the relationship type
@@ -126,10 +126,10 @@ def create_relationship(request):
     rel.save()
     
     # Add the words to the new relationship
-    WordsForRelationship(relationship=rel, word=word_object).save()
+    WordsForRelationship(relationship=rel, word=current_word_object).save()
     WordsForRelationship(relationship=rel, word=new_word_object).save()
     
-    context = {'word': word_object}
+    context = {'word': current_word_object}
     return render_to_response(relationship_type + '_snippet.html', context,
                               context_instance=RequestContext(request))
 

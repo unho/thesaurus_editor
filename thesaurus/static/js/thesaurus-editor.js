@@ -141,7 +141,7 @@ jQuery(document).ready(function () {
     // Add a new meaning with a new word.
     function add_new_meaning(type) {
         // Get the word in which entry are we working right now
-        var word = jQuery("#current-word").text().trim();
+        var current = jQuery("#current-word").text().trim();
         
         // Get the active word
         var new_word = jQuery("#results-list > li.active > a").contents()
@@ -151,7 +151,7 @@ jQuery(document).ready(function () {
         var url = "/relationships/create/";
         // type can be "synonyms", "antonyms" or "related".
         var data = {
-            word        : word,
+            current     : current,
             new_word    : new_word,
             type        : type
         };
