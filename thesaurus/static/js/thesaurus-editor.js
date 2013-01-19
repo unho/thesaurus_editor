@@ -147,14 +147,18 @@ jQuery(document).ready(function () {
         var new_word = jQuery("#results-list > li.active > a").contents()
             .first().text().trim();
         
+        // Get the data
+        var url = "/relationships/create/";
+        // type can be "synonyms", "antonyms" or "related".
+        var data = {
+            word        : word,
+            new_word    : new_word,
+            type        : type
+        };
+        
         // Create a new meaning for the current word adding the active word
         // in the meaning, and then refresh all the meanings for this type.
-        // type can be "synonyms", "antonyms" or "related".
-        jQuery.post("/relationships/create/",
-                    {type: type, word: word, new_word: new_word},
-                    function(data) {
-            jQuery("#" + type + " > ul.meanings").html(data);
-        });
+        jQuery("#" + type + " > ul.meanings").load(url, data);
     }
     
     // Add the active word from the search results list as new synonym in a new
