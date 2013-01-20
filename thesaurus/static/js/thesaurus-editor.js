@@ -188,6 +188,25 @@ jQuery(document).ready(function () {
         };
     });
     
+    // Add the active word from the search results list as new synonym in a new
+    // synonym meaning using the mouse.
+    $(document).on("click", "#results-list button", function(event) {
+        // Get the clicked button text.
+        var target = jQuery(event.target).text().trim();
+        
+        switch (target) {
+            case "S":
+                add_new_meaning("synonyms");
+                break;
+            case "A":
+                add_new_meaning("antonyms");
+                break;
+            case "R":
+                add_new_meaning("related-words");
+                break;
+        };
+    });
+    
     // Remove the word which delete button was pressed from the relationship.
     function remove_word(event) {
         // Get the clicked tag.
