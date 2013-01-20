@@ -44,9 +44,8 @@ urlpatterns = patterns('thesaurus.views',
     #    name='thesaurus_delete_relationship'
     #),
     #TODO add word to existing relationship
-    #TODO delete word from existing relationship
-    url(r'^relationships/(?P<relationship>\w+)/remove/(?P<word>\w+)/$',
-        'delete_word_from_relationship', 
+    url(r'^relationships/removeword/$',
+        'remove_word_from_relationship',
         name='thesaurus_remove_word_from_relationship'
     ),
     url(r'^search/$',

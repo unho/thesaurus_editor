@@ -187,4 +187,43 @@ jQuery(document).ready(function () {
             add_new_meaning("related-words");
         };
     });
+    
+    // Remove the word which delete button was pressed from the relationship.
+    function remove_word(event) {
+        // Get the clicked tag.
+        var target = jQuery(event.target);
+        
+        // Get the word in which entry are we working right now.
+        var current = jQuery("#current-word").text().trim();
+
+        // Get the word to remove.
+        var word = target.siblings("a").text().trim();
+
+        // Get the relationship id where is the word to be removed.
+        var relationship = target.parents(".meanings > li").attr("id");
+
+        // Get the relationship type.
+        var type = target.parents(".meanings").parent().attr("id");
+        
+        /* TODO Show a dialog to confirm if the word should be removed from the
+           relationship.
+        */
+        
+        // Get the data
+        var url = "/relationships/removeword/";
+        // type can be "synonyms", "antonyms" or "related".
+        var data = {
+            current         : current,
+            word            : word,
+            relationship    : relationship,
+            type            : type
+        };
+        
+        // Remove the word from the relationship, deleting it if it has no more
+        // words. After that reload the relationships list for this kind.
+        jQuery("#" + type + " > ul.meanings").load(url, data);
+    }
+    
+    // Remove the word which delete button was pressed from the relationship.
+    $(document).on("click", ".meanings span.word i.icon-trash", remove_word);
 });

@@ -80,13 +80,6 @@ def import_words(request):
     return render_to_response('import.html', context, context_instance=RequestContext(request))
 
 
-
-
-def delete_word_from_relationship(request, relationship, word):
-    context = {'words': Word.objects.all()}#TODO cambiar
-    return render_to_response('export.txt', context)
-
-
 def ajax_search(request):
     word = request.GET.get('word')
     current = request.GET.get('current')
@@ -128,6 +121,37 @@ def create_relationship(request):
     # Add the words to the new relationship
     WordsForRelationship(relationship=rel, word=current_word_object).save()
     WordsForRelationship(relationship=rel, word=new_word_object).save()
+    
+    context = {'word': current_word_object}
+    return render_to_response(relationship_type + '_snippet.html', context,
+                              context_instance=RequestContext(request))
+
+
+@ensure_csrf_cookie
+def remove_word_from_relationship(request):
+    if not request.method == 'POST':
+        raise Http404
+    relationship_type = request.POST.get('type')
+    if not (relationship_type == "synonyms" or relationship_type == "antonyms"
+            or relationship_type == "related-words"):
+        raise Http404
+    current = request.POST.get('current')
+    word = request.POST.get('word')
+    relationship = request.POST.get('relationship')
+    
+    # Get the objects.
+    current_word_object = get_object_or_404(Word, word=current)
+    word_object = get_object_or_404(Word, word=word)
+    relationship_object = get_object_or_404(Relationship, pk=relationship)
+    
+    # Remove the word from the relationship.
+    get_object_or_404(WordsForRelationship, word=word_object,
+                           relationship=relationship_object).delete()
+    
+    # Remove the relationship if only has another word.
+    if relationship_object.words.count() == 1:
+        relationship_object.words.clear()
+        relationship_object.delete()
     
     context = {'word': current_word_object}
     return render_to_response(relationship_type + '_snippet.html', context,
