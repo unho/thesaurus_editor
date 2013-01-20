@@ -191,6 +191,8 @@ jQuery(document).ready(function () {
     // Add the active word from the search results list as new synonym in a new
     // synonym meaning using the mouse.
     $(document).on("click", "#results-list button", function(event) {
+        event.preventDefault();
+        
         // Get the clicked button text.
         var target = jQuery(event.target).text().trim();
         
