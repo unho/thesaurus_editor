@@ -122,7 +122,7 @@ def create_relationship(request):
     WordsForRelationship(relationship=rel, word=current_word_object).save()
     WordsForRelationship(relationship=rel, word=new_word_object).save()
     
-    context = {'word': current_word_object}
+    context = {'word': current_word_object, 'selected_meaning': rel.pk}
     return render_to_response(relationship_type + '_snippet.html', context,
                               context_instance=RequestContext(request))
 

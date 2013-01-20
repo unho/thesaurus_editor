@@ -156,6 +156,9 @@ jQuery(document).ready(function () {
             type        : type
         };
         
+        // Remove the selected-meaning class from all the meanings.
+        jQuery("li.selected-meaning").removeClass("selected-meaning");
+        
         // Create a new meaning for the current word adding the active word
         // in the meaning, and then refresh all the meanings for this type.
         jQuery("#" + type + " > ul.meanings").load(url, data);
