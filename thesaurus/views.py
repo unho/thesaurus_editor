@@ -158,4 +158,26 @@ def remove_word_from_relationship(request):
                               context_instance=RequestContext(request))
 
 
+@ensure_csrf_cookie
+def add_word_to_relationship(request):
+    if not request.method == 'POST':
+        raise Http404
+    relationship_type = request.POST.get('type')
+    relationship = request.POST.get('relationship')
+    current = request.POST.get('current')
+    new_word = request.POST.get('new_word')
+    
+    # Get the objects
+    current_word_object = get_object_or_404(Word, word=current)
+    new_word_object = get_object_or_404(Word, word=new_word)
+    rel = get_object_or_404(Relationship, pk=relationship)
+    
+    # Add the word to the existing relationship
+    WordsForRelationship(relationship=rel, word=new_word_object).save()
+    
+    context = {'word': current_word_object, 'selected_meaning': rel.pk}
+    return render_to_response(relationship_type + '_snippet.html', context,
+                              context_instance=RequestContext(request))
+
+
 
