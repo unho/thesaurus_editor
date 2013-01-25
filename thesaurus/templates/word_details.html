@@ -24,8 +24,9 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
     <h2 id="current-word" class="span5">{{ word.word }}</h2>
     <div class="btn-toolbar pull-right">
         <div class="btn-group">
-            <a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the previous word" %}"><i class="icon-chevron-left"></i></a>
-            <a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the next word" %}"><i class="icon-chevron-right"></i></a>
+            <!--<a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the previous word" %}"><i class="icon-chevron-left"></i></a>--><!-- TODO -->
+            <a href="{% url thesaurus_home %}" class="btn" rel="tooltip" data-original-title="{% trans "Go to the word list" %}"><i class="icon-home"></i></a>
+            <!--<a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the next word" %}"><i class="icon-chevron-right"></i></a>--><!-- TODO -->
         </div>
     </div>
 </div>
