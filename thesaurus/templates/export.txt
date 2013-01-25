@@ -24,7 +24,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% if synonyms_list.pos %}{{ synonyms_list.pos }}|{% endif %}
 
 
-{% endcomment %}{% for synonym in synonyms_list %}{{ synonym }}{% comment %}
+{% endcomment %}{% for synonym in synonyms_list.words %}{{ synonym }}{% comment %}
 
 
         TODO put in here the relationship word notes, like (generic word)
