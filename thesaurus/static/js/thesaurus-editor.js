@@ -17,6 +17,7 @@
 
 
 jQuery(document).ready(function () {
+    
     function csrfSafeMethod(method) {
         // these HTTP methods do not require CSRF protection
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
@@ -30,9 +31,6 @@ jQuery(document).ready(function () {
             }
         }
     });
-    
-    // Enable tooltips.
-    $("[rel=tooltip]").tooltip();
     
     // Put the focus on the search field when hitting the F key.
     jQuery(document).bind('keyup', 'f', function(event) {
