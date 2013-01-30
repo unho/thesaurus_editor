@@ -80,6 +80,7 @@ def import_words(request):
     return render_to_response('import.html', context, context_instance=RequestContext(request))
 
 
+@ensure_csrf_cookie
 def ajax_search(request):
     word = request.GET.get('word')
     current = request.GET.get('current')
