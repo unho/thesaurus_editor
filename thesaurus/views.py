@@ -81,6 +81,13 @@ def import_words(request):
 
 
 @ensure_csrf_cookie
+def word_details(request, pk):
+    word = get_object_or_404(Word, pk=pk)
+    context = {'word': word}
+    return render_to_response('word_details.html', context,
+                              context_instance=RequestContext(request))
+
+
 def ajax_search(request):
     word = request.GET.get('word')
     current = request.GET.get('current')
@@ -93,7 +100,6 @@ def ajax_search(request):
                               context_instance=RequestContext(request))
 
 
-@ensure_csrf_cookie
 def create_relationship(request):
     if not request.method == 'POST':
         raise Http404
@@ -128,7 +134,6 @@ def create_relationship(request):
                               context_instance=RequestContext(request))
 
 
-@ensure_csrf_cookie
 def remove_word_from_relationship(request):
     if not request.method == 'POST':
         raise Http404
@@ -159,7 +164,6 @@ def remove_word_from_relationship(request):
                               context_instance=RequestContext(request))
 
 
-@ensure_csrf_cookie
 def add_word_to_relationship(request):
     if not request.method == 'POST':
         raise Http404

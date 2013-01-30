@@ -29,11 +29,7 @@ urlpatterns = patterns('thesaurus.views',
         #paginate_by = 3,
         template_name="word_list.html",
     ), name='thesaurus_home'),
-    url(r'^words/(?P<pk>\w+)/$', DetailView.as_view(
-        model=Word,
-        context_object_name = "word",
-        template_name="word_details.html",
-    ), name='thesaurus_word'),
+    url(r'^words/(?P<pk>\w+)/$', 'word_details', name='thesaurus_word'),
     url(r'^relationships/create/$',
         'create_relationship',
         name='thesaurus_create_relationship'
