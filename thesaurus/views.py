@@ -52,7 +52,8 @@ def import_uploaded_file(uploaded_file):
             word = Word(word=line)
             word.save()
     except:
-        # Some exception was raised while extracting the data from the uploaded file
+        # Some exception was raised while extracting the data from the uploaded
+        # file.
         transaction.rollback()
         raise Exception
     else:
@@ -68,7 +69,7 @@ def import_words(request):
             try:
                 import_uploaded_file(request.FILES['imported_file'])
             except:
-                import_error_message = _("The uploaded file is not a valid one.")
+                import_error_message = _("The uploaded file is not valid.")
                 context['import_error_message'] = import_error_message
             else:
                 import_message = _("File succesfully imported. Thank you!")
@@ -77,7 +78,8 @@ def import_words(request):
     else:
         import_form = ImportForm()
     context['import_form'] = import_form
-    return render_to_response('import.html', context, context_instance=RequestContext(request))
+    return render_to_response('import.html', context,
+                              context_instance=RequestContext(request))
 
 
 @ensure_csrf_cookie
