@@ -36,7 +36,8 @@ def export(request):
     # Create the HttpResponse object with the appropriate header.
     response = HttpResponse(mimetype='text/plain')
     now = datetime.datetime.today()
-    response['Content-Disposition'] = 'attachment; filename=thesaurus_' + now.strftime("%Y-%m-%d-%X") + '.txt'
+    response['Content-Disposition'] = ('attachment; filename=thesaurus_%s.txt'
+                                      % now.strftime("%Y-%m-%d-%X"))
     # Create the response
     template = loader.get_template('export.txt')
     context = Context({'words': Word.objects.all()})
