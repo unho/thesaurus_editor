@@ -26,6 +26,7 @@ from django.db import transaction
 from django.template import loader, Context, RequestContext
 from django.http import HttpResponse
 from django.utils.translation import ugettext_lazy as _
+from django.utils.encoding import smart_unicode
 #from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 from thesaurus.models import *
@@ -49,7 +50,7 @@ def export(request):
 def import_uploaded_file(uploaded_file):
     try:
         for line in uploaded_file:
-            line = line.replace("\n", "")#TODO fails when using unicode strings
+            line = smart_unicode(line.replace("\n", "").split("|")[0])
             word = Word(word=line)
             word.save()
     except:
