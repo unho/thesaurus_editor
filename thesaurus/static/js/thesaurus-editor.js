@@ -93,7 +93,7 @@ jQuery(document).ready(function () {
     // Move down in the results list when pressing the down key.
     jQuery(document).bind('keyup', 'down', function(event) {
         /* TODO avoid scrolling down the page when pressing the down key. Maybe
-           this isn't a good idea, perhaps ctrl+down should be used instead.
+           this isn't a good idea, perhaps shift+down should be used instead.
         */
         
         // Get the focus out of the search field since now we are navigating
@@ -287,4 +287,62 @@ jQuery(document).ready(function () {
     
     // Remove the word which delete button was pressed from the relationship.
     $(document).on("click", ".meanings span.word i.icon-trash", remove_word);
+    
+    // Select the next meaning, independently of the relationship type, if it
+    // is not the last meaning, or the first meaning if no meaning is selected,
+    // using the keyboard.
+    jQuery(document).bind('keyup', 'ctrl+down', function(event) {
+        var current = jQuery("#relationships li.selected-meaning");
+        
+        if (current.length == 0) {
+            jQuery("#relationships li[id]:first").addClass("selected-meaning");
+        }
+        else {
+            // Get all the meanings (li with id attribute).
+            var meanings = jQuery("#relationships li[id]").toArray();
+            var found = false;
+            
+            for (var i = 0; i < meanings.length; i++) {
+                if (found) {
+                    found = false;
+                    current.removeClass("selected-meaning");
+                    jQuery(meanings[i]).addClass("selected-meaning");
+                    break;
+                };
+                
+                if (current.attr("id") == jQuery(meanings[i]).attr("id")) {
+                    found = true;
+                };
+            };
+        };
+    });
+    
+    // Select the previous meaning, independently of the relationship type, if
+    // it is not the last meaning, or the last meaning if no meaning is
+    // selected, using the keyboard.
+    jQuery(document).bind('keyup', 'ctrl+up', function(event) {
+        var current = jQuery("#relationships li.selected-meaning");
+        
+        if (current.length == 0) {
+            jQuery("#relationships li[id]:last").addClass("selected-meaning");
+        }
+        else {
+            // Get all the meanings (li with id attribute).
+            var meanings = jQuery("#relationships li[id]").toArray();
+            var found = false;
+            
+            for (var i = meanings.length - 1; i >= 0; i--) {
+                if (found) {
+                    found = false;
+                    current.removeClass("selected-meaning");
+                    jQuery(meanings[i]).addClass("selected-meaning");
+                    break;
+                };
+                
+                if (current.attr("id") == jQuery(meanings[i]).attr("id")) {
+                    found = true;
+                };
+            };
+        };
+    });
 });
