@@ -249,54 +249,35 @@ jQuery(document).ready(function () {
     // Remove the word which delete button was pressed from the relationship.
     $(document).on("click", ".meanings span.word i.icon-trash", remove_word);
     
-    // Add a new word in an existing meaning.
-    function add_in_selected_meaning(rel_type) {
+    // Add the active word from the search results list as a new word in the
+    // currently selected meaning using the keyboard.
+    jQuery(document).bind('keyup', 'c', function(event) {
+        
         // Get the relationship type for selected meaning.
         var type = jQuery("li.selected-meaning").parent().parent().attr("id");
         
-        // Check if the selected meaning type is the one we are trying to add.
-        if (type == rel_type) {
-            // Get the word in which entry are we working right now.
-            var current = jQuery("#current-word").text().trim();
-            
-            // Get the active word in search results.
-            var new_word = jQuery("#results-list > li.active > a").contents()
-                .first().text().trim();
-            
-            // Get the selected relationship id.
-            var relationship = jQuery("li.selected-meaning").attr("id");
-            
-            // Get the data.
-            var url = "/relationships/addword/";
-            // type can be "synonyms", "antonyms" or "related".
-            var data = {
-                current         : current,
-                new_word        : new_word,
-                relationship    : relationship,
-                type            : type
-            };
-            
-            // Create a new meaning for the current word adding the active word
-            // in the meaning, and then refresh all the meanings for this type.
-            jQuery("#" + type + " > ul.meanings").load(url, data);
+        // Get the word in which entry are we working right now.
+        var current = jQuery("#current-word").text().trim();
+        
+        // Get the active word in search results.
+        var new_word = jQuery("#results-list > li.active > a").contents()
+            .first().text().trim();
+        
+        // Get the selected relationship id.
+        var relationship = jQuery("li.selected-meaning").attr("id");
+        
+        // Get the data.
+        var url = "/relationships/addword/";
+        // type can be "synonyms", "antonyms" or "related".
+        var data = {
+            current         : current,
+            new_word        : new_word,
+            relationship    : relationship,
+            type            : type
         };
-    }
-    
-    // Add the active word from the search results list as a new synonym in the
-    // currently selected synonym meaning using the keyboard.
-    jQuery(document).bind('keyup', 'shift+s', function(event) {
-        add_in_selected_meaning("synonyms");
-    });
-    
-    // Add the active word from the search results list as a new antonym in the
-    // currently selected antonym meaning using the keyboard.
-    jQuery(document).bind('keyup', 'shift+a', function(event) {
-        add_in_selected_meaning("antonyms");
-    });
-    
-    // Add the active word from the search results list as a new related word
-    // in the currently selected related meaning using the keyboard.
-    jQuery(document).bind('keyup', 'shift+r', function(event) {
-        add_in_selected_meaning("related-words");
+        
+        // Create a new meaning for the current word adding the active word
+        // in the meaning, and then refresh all the meanings for this type.
+        jQuery("#" + type + " > ul.meanings").load(url, data);
     });
 });
