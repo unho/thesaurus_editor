@@ -24,9 +24,9 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
     <h2 id="current-word" class="span5">{{ word.word }}</h2>
     <div class="btn-toolbar pull-right">
         <div class="btn-group">
-            <!--<a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the previous word" %}"><i class="icon-chevron-left"></i></a>--><!-- TODO -->
+            {% comment %}<!--<a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the previous word" %}"><i class="icon-chevron-left"></i></a>--><!-- TODO -->{% endcomment %}
             <a href="{% url thesaurus_home %}" class="btn" rel="tooltip" data-original-title="{% trans "Go to the word list" %}"><i class="icon-home"></i></a>
-            <!--<a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the next word" %}"><i class="icon-chevron-right"></i></a>--><!-- TODO -->
+            {% comment %}<!--<a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the next word" %}"><i class="icon-chevron-right"></i></a>--><!-- TODO -->{% endcomment %}
         </div>
     </div>
 </div>
@@ -53,19 +53,16 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
             {% include "related-words_snippet.html" %}
             </ul>
         </div>
-        
     </div>
     
     <div class="span6" id="word-provider">
         <ul class="nav nav-tabs" id="myTab">
             <li class="active"><a href="#server" data-toggle="tab">{% trans "Search" %}</a></li>
-            <!--<li><a href="#suggestions" data-toggle="tab">Suggestions</a></li>--><!-- TODO -->
+            {% comment %}<!--<li><a href="#suggestions" data-toggle="tab">Suggestions</a></li>--><!-- TODO -->{% endcomment %}
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="server">
-                <!--<div class="loading">{% trans "Loading..." %}</div>-->
-
-
+                {% comment %}<!--<div class="loading">{% trans "Loading..." %}</div>-->{% endcomment %}
                 <div class="input-append">
                     <form class="form-search">
                         <input type="search" class="input-medium" id="appendedInputButton" placeholder="{% trans "Search for a word..." %}">
@@ -73,20 +70,16 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                     </form>
                 </div>
                 
-                
-                
                 <ul id="results-list" class="nav nav-list bs-docs-sidenav">
                 </ul>
-                
-                
             </div>
+            
             <div class="tab-pane" id="suggestions">
-                 <!--TODO MySQL levenshtein distance: http://www.jisaacks.com/find-similar-products-in-mysql-using-levenshtein-distance -->
+                 {% comment %}<!--TODO MySQL levenshtein distance: http://www.jisaacks.com/find-similar-products-in-mysql-using-levenshtein-distance -->{% endcomment %}
                 <div class="loading">{% trans "Loading..." %}</div>
             </div>
         </div>
     </div>
-    
 </div>
 {% endblock %}
 

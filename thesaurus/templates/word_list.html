@@ -35,18 +35,20 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                         
                         <ul>
                         {% for word in words %}
-                            <li><a href="{% url thesaurus_word pk=word.pk %}">{{ word.word }}</a></li><!-- TODO convert spaces in word, in order to get URLs for words with spaces working -->
-                            <!-- TODO put an image instead of list item bullet -->
+                            <li><a href="{% url thesaurus_word pk=word.pk %}">{{ word.word }}</a></li>
+                            {% comment %}<!-- TODO put an image instead of list item bullet -->{% endcomment %}
                         {% empty %}
                             <li class="muted">{% blocktrans %}There are no words.{% endblocktrans %}</li>
                         {% endfor %}
                         </ul>
                         
                         {% if is_paginated %}
-                        <div class="pagination pagination-centered"><!-- TODO change code for support errors when passing a number page greater than the existing pages number -->
+                        <div class="pagination pagination-centered">
+                            {% comment %}<!-- TODO change code for support errors when passing a number page greater than the existing pages number -->{% endcomment %}
                             <ul>
                                 <li{% if not page_obj.has_previous %} class="disabled"><a href="">&laquo;</a>{% else %}><a href="{% url thesaurus_home %}?page={{ page_obj.previous_page_number }}">&laquo;</a>{% endif %}</li>{% for number in paginator.page_range %}
-                                <li{% if page_obj.number == number %} class="active"{% endif %}><a href="{% url thesaurus_home %}?page={{ number }}">{{ number }}</a></li>{% endfor %}<!-- TODO change this for showing only a few numbers around the current one if there is too much pages. -->
+                                <li{% if page_obj.number == number %} class="active"{% endif %}><a href="{% url thesaurus_home %}?page={{ number }}">{{ number }}</a></li>{% endfor %}
+                                {% comment %}<!-- TODO change this for showing only a few numbers around the current one if there is too much pages. -->{% endcomment %}
                                 <li{% if not page_obj.has_next %} class="disabled"><a href="">&raquo;</a>{% else %}><a href="{% url thesaurus_home %}?page={{ page_obj.next_page_number }}">&raquo;</a>{% endif %}</li>
                             </ul>
                         </div>

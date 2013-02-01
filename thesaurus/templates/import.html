@@ -27,8 +27,6 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                 <div class="row-fluid clearfix">
                     <div class="span6">
                         
-                        <!-- TODO use bootstrap classes for the form -->
-                        
                         {% if import_message %}
                         <div class="alert alert-success">
                             <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -42,6 +40,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                         </div>
                         {% endif %}
                         
+                        {% comment %}<!-- TODO use bootstrap classes for the import form -->{% endcomment %}
                         
                         <form class="bs-docs-example form-horizontal" enctype="multipart/form-data" action="" method="post">
                             {% csrf_token %}
@@ -59,8 +58,6 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                                 </div>
                             </div>
                         </form>
-                        
-                        
                         
                     </div>
                 </div>
