@@ -26,7 +26,7 @@ urlpatterns = patterns('thesaurus.views',
     url(r'^$', ListView.as_view(
         model=Word,
         context_object_name = "words",
-        #paginate_by = 3,
+        paginate_by = 100,
         template_name="word_list.html",
     ), name='thesaurus_home'),
     url(r'^words/(?P<pk>[\w\ \-,/!]+)/$', 'word_details', name='thesaurus_word'),

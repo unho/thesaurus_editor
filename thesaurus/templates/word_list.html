@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load humanize %}
 
 {% comment %}
 Copyright 2013 Leandro Regueiro
@@ -26,35 +27,28 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 
                 <div class="row-fluid clearfix">
                     <div class="span6">
+                        {% if is_paginated %}
+                        <p>Page <strong>{{ page_obj.number }}</strong> of <strong>{{ paginator.num_pages }}</strong>: words <strong>{{ page_obj.start_index|intcomma }}</strong> to <strong>{{ page_obj.end_index|intcomma }}</strong>.</p>
+                        {% else %}
+                        <p>Page <strong>1</strong> of <strong>1</strong>: words <strong>1</strong> to <strong>{{ words|length }}</strong>.</p>
+                        {% endif %}
+                        
                         <ul>
                         {% for word in words %}
                             <li><a href="{% url thesaurus_word pk=word.pk %}">{{ word.word }}</a></li><!-- TODO convert spaces in word, in order to get URLs for words with spaces working -->
                             <!-- TODO put an image instead of list item bullet -->
                         {% endfor %}
                         </ul>
+                        
+                        {% if is_paginated %}
+                        <div class="pagination pagination-centered"><!-- TODO change code for support errors when passing a number page greater than the existing pages number -->
+                            <ul>
+                                <li{% if not page_obj.has_previous %} class="disabled"><a href="">&laquo;</a>{% else %}><a href="{% url thesaurus_home %}?page={{ page_obj.previous_page_number }}">&laquo;</a>{% endif %}</li>{% for number in paginator.page_range %}
+                                <li{% if page_obj.number == number %} class="active"{% endif %}><a href="{% url thesaurus_home %}?page={{ number }}">{{ number }}</a></li>{% endfor %}<!-- TODO change this for showing only a few numbers around the current one if there is too much pages. -->
+                                <li{% if not page_obj.has_next %} class="disabled"><a href="">&raquo;</a>{% else %}><a href="{% url thesaurus_home %}?page={{ page_obj.next_page_number }}">&raquo;</a>{% endif %}</li>
+                            </ul>
+                        </div>
+                        {% endif %}
                     </div>
-                    
-                    <!-- TODO paginate the word list -->
-                    
-<!--                        <br />    <br />    <br />-->
-<!--                    <div class="pagination">-->
-<!--                        <span class="step-links">-->
-<!--                            {% if word_list.has_previous %}-->
-<!--                                <a href="?page={{ word_list.previous_page_number }}">previous</a>    <br />-->
-<!--                            {% endif %}-->
-
-<!--                            <span class="current">-->
-<!--                                Page {{ word_list.number }} of {{ word_list.paginator.num_pages }}.    <br />-->
-<!--                            </span>-->
-
-<!--                            {% if word_list.has_next %}-->
-<!--                                <a href="?page={{ word_list.next_page_number }}">next</a>    <br />-->
-<!--                            {% endif %}-->
-<!--                        </span>-->
-<!--                    </div>-->
-                    
-                    
-                    
-                    
                 </div>
 {% endblock %}
