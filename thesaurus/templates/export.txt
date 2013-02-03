@@ -25,4 +25,4 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 
 
 {% endcomment %}{% if not forloop.last %}|{% endif %}{% endfor %}
-{% empty %}{% endfor %}{% endwith %}{% endfor %}
+{% endfor %}{% endwith %}{% endfor %}
