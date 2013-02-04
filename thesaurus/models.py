@@ -38,6 +38,7 @@ from django.db import models
 
 class Word(models.Model):
     word = models.CharField(primary_key=True, max_length=100)
+    finalized = models.BooleanField(default=False)
     #thesaurus = models.ForeignKey(Thesaurus)
     
     class Meta:
