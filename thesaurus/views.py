@@ -85,8 +85,7 @@ def import_words(request):
 @ensure_csrf_cookie
 def word_details(request, pk):
     word = get_object_or_404(Word, pk=pk)
-    context = {'word': word}
-    return render_to_response('word_details.html', context,
+    return render_to_response('word_details.html', {'word': word},
                               context_instance=RequestContext(request))
 
 
