@@ -63,7 +63,7 @@ body {
     border-radius: 0 0 6px 6px;
 }
 
-.bs-docs-sidenav > .active > a {
+.bs-docs-sidenav > li.active > a {
     position: relative;
     z-index: 2;
     padding: 9px 15px;
