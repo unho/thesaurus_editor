@@ -89,6 +89,17 @@ def word_details(request, pk):
                               context_instance=RequestContext(request))
 
 
+def ajax_finalize_word(request):
+    if not request.method == 'POST':
+        raise Http404
+    current = request.POST.get('current')
+    word = get_object_or_404(Word, pk=current)
+    word.finalized = True
+    word.save()
+    return render_to_response('word_details.html', {'word': word},
+                              context_instance=RequestContext(request))
+
+
 def ajax_search(request):
     word = request.GET.get('word')
     current = request.GET.get('current')

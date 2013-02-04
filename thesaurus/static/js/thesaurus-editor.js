@@ -345,4 +345,17 @@ jQuery(document).ready(function () {
             };
         };
     });
+    
+    // Mark the current word as finalized.
+    jQuery(document).bind('keyup', 'p', function(event) {
+        // If the current word is not yet finalized then fire the AJAX request.
+        if (!jQuery("#current-word").hasClass("finalized")) {
+            // Get the word in which entry are we working right now.
+            var current = jQuery("#current-word").text().trim();
+            
+            // Mark the current word as finalized. After that reload the word
+            // details page.
+            jQuery("body").load("/finalize/", {current : current});
+        };
+    });
 });
