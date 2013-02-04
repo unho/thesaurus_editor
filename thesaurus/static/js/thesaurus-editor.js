@@ -358,4 +358,17 @@ jQuery(document).ready(function () {
             jQuery("body").load("/finalize/", {current : current});
         };
     });
+    
+    // Mark the current word as not finalized.
+    jQuery(document).bind('keyup', 'u', function(event) {
+        // If the current word is already finalized then fire the AJAX request.
+        if (jQuery("#current-word").hasClass("finalized")) {
+            // Get the word in which entry are we working right now.
+            var current = jQuery("#current-word").text().trim();
+            
+            // Mark the current word as not finalized. After that reload the
+            // word details page.
+            jQuery("body").load("/unfinalize/", {current : current});
+        };
+    });
 });

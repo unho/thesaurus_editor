@@ -36,6 +36,10 @@ urlpatterns = patterns('thesaurus.views',
         'ajax_finalize_word',
         name='thesaurus_finalize_word'
     ),
+    url(r'^unfinalize/$',
+        'ajax_unfinalize_word',
+        name='thesaurus_finalize_word'
+    ),
     url(r'^search/$',
         'ajax_search',
         name='thesaurus_search'
