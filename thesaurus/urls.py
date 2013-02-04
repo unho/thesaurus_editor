@@ -18,8 +18,7 @@
 # Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 
 from django.conf.urls.defaults import patterns, url
-from django.views.generic import TemplateView, ListView, DetailView
-#from thesaurus.views import TerminatorListView, ConceptDetailView
+from django.views.generic import TemplateView, ListView
 from thesaurus.models import Word
 
 urlpatterns = patterns('thesaurus.views',
@@ -29,16 +28,14 @@ urlpatterns = patterns('thesaurus.views',
         paginate_by = 100,
         template_name="word_list.html",
     ), name='thesaurus_home'),
-    url(r'^words/(?P<pk>[\w\ \-,/!]+)/$', 'word_details', name='thesaurus_word'),
+    url(r'^words/(?P<pk>[\w\ \-,/!]+)/$',
+        'word_details',
+        name='thesaurus_word'
+    ),
     url(r'^relationships/create/$',
         'create_relationship',
         name='thesaurus_create_relationship'
     ),
-    #TODO delete relationship
-    #url(r'^relationships/(?P<relationship>\w+)/delete/$',
-    #    'delete_relationship', 
-    #    name='thesaurus_delete_relationship'
-    #),
     url(r'^relationships/addword/$',
         'add_word_to_relationship',
         name='thesaurus_add_word_to_relationship'
