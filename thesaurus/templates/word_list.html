@@ -30,7 +30,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                         {% if is_paginated %}
                         <p>Page <strong>{{ page_obj.number }}</strong> of <strong>{{ paginator.num_pages }}</strong>: words <strong>{{ page_obj.start_index|intcomma }}</strong> to <strong>{{ page_obj.end_index|intcomma }}</strong>.</p>
                         {% else %}
-                        <p>Page <strong>1</strong> of <strong>1</strong>: words <strong>1</strong> to <strong>{{ words|length }}</strong>.</p>
+                        <p>Page <strong>1</strong> of <strong>1</strong>: {% if words %}words <strong>1</strong> to <strong>{{ words|length }}</strong>{% else %}There are no words{% endif %}.</p>
                         {% endif %}
                         
                         <ul id="word-list">
