@@ -20,14 +20,12 @@
 import datetime
 
 from django.shortcuts import render_to_response, Http404, get_object_or_404
-#from django.views.generic import DetailView, ListView, TemplateView
 from django.views.decorators.csrf import csrf_protect, ensure_csrf_cookie
 from django.db import transaction
 from django.template import loader, Context, RequestContext
 from django.http import HttpResponse
 from django.utils.translation import ugettext_lazy as _
 from django.utils.encoding import smart_unicode
-#from django.core.paginator import Paginator, InvalidPage, EmptyPage
 
 from thesaurus.models import *
 from thesaurus.forms import *
