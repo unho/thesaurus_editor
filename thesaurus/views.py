@@ -39,7 +39,10 @@ def export(request):
                                       % now.strftime("%Y-%m-%d-%X"))
     # Create the response
     template = loader.get_template('export.txt')
-    context = Context({'words': Word.objects.all()})
+    objs = {'words':
+            Word.objects.filter(relationship__relationship_type="S").distinct()
+    }
+    context = Context(objs)
     response.write(template.render(context))
     return response
 
