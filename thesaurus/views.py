@@ -102,7 +102,7 @@ def ajax_search(request):
                               context_instance=RequestContext(request))
 
 
-def create_relationship(request):
+def ajax_create_relationship(request):
     if not request.method == 'POST':
         raise Http404
     relationship_type = request.POST.get('type')
@@ -136,7 +136,7 @@ def create_relationship(request):
                               context_instance=RequestContext(request))
 
 
-def remove_word_from_relationship(request):
+def ajax_remove_word_from_relationship(request):
     if not request.method == 'POST':
         raise Http404
     relationship_type = request.POST.get('type')
@@ -166,7 +166,7 @@ def remove_word_from_relationship(request):
                               context_instance=RequestContext(request))
 
 
-def add_word_to_relationship(request):
+def ajax_add_word_to_relationship(request):
     if not request.method == 'POST':
         raise Http404
     relationship_type = request.POST.get('type')

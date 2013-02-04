@@ -32,21 +32,21 @@ urlpatterns = patterns('thesaurus.views',
         'word_details',
         name='thesaurus_word'
     ),
-    url(r'^relationships/create/$',
-        'create_relationship',
-        name='thesaurus_create_relationship'
-    ),
-    url(r'^relationships/addword/$',
-        'add_word_to_relationship',
-        name='thesaurus_add_word_to_relationship'
-    ),
-    url(r'^relationships/removeword/$',
-        'remove_word_from_relationship',
-        name='thesaurus_remove_word_from_relationship'
-    ),
     url(r'^search/$',
         'ajax_search',
         name='thesaurus_search'
+    ),
+    url(r'^relationships/create/$',
+        'ajax_create_relationship',
+        name='thesaurus_create_relationship'
+    ),
+    url(r'^relationships/removeword/$',
+        'ajax_remove_word_from_relationship',
+        name='thesaurus_remove_word_from_relationship'
+    ),
+    url(r'^relationships/addword/$',
+        'ajax_add_word_to_relationship',
+        name='thesaurus_add_word_to_relationship'
     ),
     url(r'^export/$',
         'export',
