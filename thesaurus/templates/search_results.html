@@ -15,7 +15,7 @@ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
 You should have received a copy of the GNU General Public License along with
 Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}{% for result in search_results %}
-    <li{% if forloop.first %} class="active"{% endif %}>
+    <li{% if forloop.first or result.finalized %} class="{% if forloop.first %}active{% endif %} {% if result.finalized %}finalized{% endif %}"{% endif %}>
         <a href="{% url thesaurus_word pk=result.pk %}">{{ result.word }}
             <div class="btn-group pull-right{% if not forloop.first %} hide{% endif %}">
                 <button type="button" class="btn btn-mini" rel="tooltip" data-placement="bottom" title="{% trans "Add this as synonym" %}">S</button>

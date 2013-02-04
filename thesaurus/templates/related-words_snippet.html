@@ -17,9 +17,9 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}{% for relationship in word.retrieve_related_words %}
                 <li id="{{ relationship.pk }}"{% if selected_meaning == relationship.pk %} class="selected-meaning"{% endif %}>
                     <strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}:{% endblocktrans %}</strong>{% for related_word in relationship.words %}
-                    <span class="word">
+                    <span class="word{% if related_word.finalized %} finalized{% endif %}">
                         <a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }}</a>
-                        <i class="icon-trash icon-white"></i>
+                        <i class="icon-trash{% if not related_word.finalized %} icon-white{% endif %}"></i>
                     </span>{% endfor %}
                 </li>{% empty %}
                 <li class="muted">{% blocktrans with word=word.word %}{{ word }} has no related words.{% endblocktrans %}</li>

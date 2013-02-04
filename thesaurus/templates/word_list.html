@@ -33,9 +33,9 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                         <p>Page <strong>1</strong> of <strong>1</strong>: words <strong>1</strong> to <strong>{{ words|length }}</strong>.</p>
                         {% endif %}
                         
-                        <ul>
+                        <ul id="word-list">
                         {% for word in words %}
-                            <li><a href="{% url thesaurus_word pk=word.pk %}">{{ word.word }}</a></li>
+                            <li{% if word.finalized %} class="finalized"{% endif %}><a href="{% url thesaurus_word pk=word.pk %}">{{ word.word }}</a></li>
                             {% comment %}<!-- TODO put an image instead of list item bullet -->{% endcomment %}
                         {% empty %}
                             <li class="muted">{% blocktrans %}There are no words.{% endblocktrans %}</li>

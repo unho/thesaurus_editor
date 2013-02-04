@@ -21,7 +21,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 
 {% block content %}
 <div class="word-header clearfix">
-    <h2 id="current-word" class="span5">{{ word.word }}</h2>
+    <h2 id="current-word" class="span5{% if word.finalized %} finalized{% endif %}">{{ word.word }}</h2>
     <div class="btn-toolbar pull-right">
         <div class="btn-group">
             {% comment %}<!--<a href="#" class="btn" rel="tooltip" data-original-title="{% trans "Go to the previous word" %}"><i class="icon-chevron-left"></i></a>--><!-- TODO -->{% endcomment %}
@@ -34,21 +34,21 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 <div class="row-fluid clearfix">
     <div id="relationships" class="span6">
         <h5>{% trans "Synonyms" %}</h5>
-        <div id="synonyms" class="clearfix">
+        <div id="synonyms" class="clearfix{% if word.finalized %} finalized{% endif %}">
             <ul class="meanings">
             {% include "synonyms_snippet.html" %}
             </ul>
         </div>
         
         <h5>{% trans "Antonyms" %}</h5>
-        <div id="antonyms" class="clearfix">
+        <div id="antonyms" class="clearfix{% if word.finalized %} finalized{% endif %}">
             <ul class="meanings">
             {% include "antonyms_snippet.html" %}
             </ul>
         </div>
         
         <h5>{% trans "Related" %}</h5>
-        <div id="related-words" class="clearfix">
+        <div id="related-words" class="clearfix{% if word.finalized %} finalized{% endif %}">
             <ul class="meanings">
             {% include "related-words_snippet.html" %}
             </ul>

@@ -78,6 +78,21 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Styles for search results with finalized words */
+.bs-docs-sidenav > li.finalized > a {
+    background-color: #9f7;
+}
+
+.bs-docs-sidenav > li.active.finalized > a {
+    background-color: #4d0;
+    color: #333;
+}
+
+.bs-docs-sidenav > li.finalized > a:hover {
+    background-color: #beb;
+    color: #333;
+}
+
 
 /* Help styles */
 #help {
@@ -202,6 +217,42 @@ body {
     margin-left: .5em;
 }
 
+/* Styles for synonyms, antonyms and related words that are finalized */
+#synonyms.finalized, #antonyms.finalized, #related-words.finalized {
+    background-color: #dfd;
+    border-color: #bfb;
+}
+
+/*#synonyms.finalized li.selected-meaning, */
+/*#antonyms.finalized li.selected-meaning, */
+/*#related-words.finalized li.selected-meaning {*/
+/*    background-color: fuchsia;*/
+/*}*/
+
+.meanings span.finalized {
+    background-color: #4d0;
+}
+
+.meanings span.finalized a {
+    color: #000;
+}
+
+.meanings span.finalized:before {
+    border-color: transparent #4d0 transparent transparent;
+}
+
+.meanings span.finalized:after {
+    background: #999;
+}
+
+.meanings span.finalized:hover {
+    background: #6f2;
+}
+
+.meanings span.finalized:hover:before {
+    border-color: transparent #6f2 transparent transparent;
+}
+
 
 /* Copyright styles */
 .copyright {
@@ -244,6 +295,13 @@ body {
 
 #word-content .word-header h4 {
     margin-bottom: 0;
+}
+
+
+/* Styles for highlighting the finalized words */
+h2.finalized, ul#word-list > li.finalized {
+    font-weight: bold;
+    background-color: #8f5;
 }
 
 
