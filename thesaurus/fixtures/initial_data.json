@@ -2,7 +2,9 @@
     {
         "pk": "casa", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": true
+        }
     }, 
     {
         "pk": "domicilio", 
@@ -42,7 +44,9 @@
     {
         "pk": "morada", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": true
+        }
     }, 
     {
         "pk": "vivenda", 
@@ -52,7 +56,9 @@
     {
         "pk": "casar", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": true
+        }
     }, 
     {
         "pk": "divorciarse", 
@@ -72,17 +78,23 @@
     {
         "pk": "laranxeiro", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": true
+        }
     }, 
     {
         "pk": "laranxal", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": true
+        }
     }, 
     {
         "pk": "laranxada", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": true
+        }
     }, 
     {
         "pk": "moral", 
