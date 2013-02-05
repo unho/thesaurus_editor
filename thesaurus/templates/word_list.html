@@ -28,9 +28,9 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                 <div class="row-fluid clearfix">
                     <div class="span6">
                         {% if is_paginated %}
-                        <p>Page <strong>{{ page_obj.number }}</strong> of <strong>{{ paginator.num_pages }}</strong>: words <strong>{{ page_obj.start_index|intcomma }}</strong> to <strong>{{ page_obj.end_index|intcomma }}</strong>.</p>
+                        <p>{% blocktrans with page_number=page_obj.number total_pages=paginator.num_pages start_word=page_obj.start_index|intcomma end_word=page_obj.end_index|intcomma %}Page <strong>{{ page_number }}</strong> of <strong>{{ total_pages }}</strong>: words <strong>{{ start_word }}</strong> to <strong>{{ end_word }}</strong>.{% endblocktrans %}</p>
                         {% else %}
-                        <p>Page <strong>1</strong> of <strong>1</strong>: {% if words %}words <strong>1</strong> to <strong>{{ words|length }}</strong>{% else %}There are no words{% endif %}.</p>
+                        <p>{% blocktrans %}Page <strong>1</strong> of <strong>1</strong>:{% endblocktrans %} {% if words %}{% blocktrans with num_words=words|length %}words <strong>1</strong> to <strong>{{ num_words }}</strong>{% endblocktrans %}{% else %}{% blocktrans %}There are no words{% endblocktrans %}{% endif %}.</p>
                         {% endif %}
                         
                         <ul id="word-list">
