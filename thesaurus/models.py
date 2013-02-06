@@ -79,7 +79,7 @@ class Relationship(models.Model):
     )
     relationship_type = models.CharField(max_length=2, choices=RELATIONSHIP_CHOICES)
     words = models.ManyToManyField(Word, through='WordsForRelationship')
-    pos = models.CharField(max_length=20, null=True, blank=True)# Part of speech
+    pos = models.CharField(max_length=20, null=True, blank=True, default="")# Part of speech
     
     def __unicode__(self):
         return u"%(type)s: %(words)s" % {"type": self.get_relationship_type_display(), "words": self.words.all()}
@@ -88,7 +88,7 @@ class Relationship(models.Model):
 class WordsForRelationship(models.Model):
     relationship = models.ForeignKey(Relationship)
     word = models.ForeignKey(Word)
-    note = models.CharField(max_length=20, null=True, blank=True)# Like (generic word) or something like that
+    note = models.CharField(max_length=20, null=True, blank=True, default="")# Like (generic word) or something like that
     
     class Meta:
         unique_together = ("relationship", "word")
