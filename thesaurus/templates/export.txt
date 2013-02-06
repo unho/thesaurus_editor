@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License along with
 Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}UTF-8
 {% for word in words %}{{ word.word }}{% with synonyms_list_list=word.retrieve_synonyms %}|{{ synonyms_list_list|length }}
-{% for synonyms_list in synonyms_list_list %}{% if synonyms_list.pos %}{{ synonyms_list.pos }}|{% endif %}{% for synonym in synonyms_list.words %}{{ synonym }}{% comment %}
+{% for synonyms_list in synonyms_list_list %}{% if synonyms_list.pos %}({{ synonyms_list.pos }})|{% endif %}{% for synonym in synonyms_list.words %}{{ synonym }}{% comment %}
 
 
         TODO put in here the relationship word notes, like (generic word)
