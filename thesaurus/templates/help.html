@@ -75,7 +75,10 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
             <h5>{% blocktrans %}Removing a word from an existing meaning{% endblocktrans %}</h5>
             <p>{% blocktrans %}You can remove any word from any existing meaning by pressing using the mouse left button in the trashcan image that is besides the word which you wish to remove.{% endblocktrans %}</p>
             
-            <p><span class="label label-info">{% blocktrans %}Info{% endblocktrans %}</span> {% blocktrans %}Removing all words from a meaning will cause to remove the meaning itself.{% endblocktrans %}</p>
+            <div class="alert alert-info">
+                <span class="label label-info">{% blocktrans %}Info{% endblocktrans %}</span>
+                {% blocktrans %}Removing all words from a meaning will cause to remove the meaning itself.{% endblocktrans %}
+            </div>
             
             
             <h5>{% blocktrans %}Marking/unmarking a word as finalized{% endblocktrans %}</h5>
@@ -89,13 +92,19 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
             
             <p>{% blocktrans %}Note that depending of how many words are in the file it could take a while to import all of them, so be patient.{% endblocktrans %}</p>
             
-            <p><span class="label label-important">{% blocktrans %}Important{% endblocktrans %}</span> {% blocktrans %}Remember that the files should be UTF-8 encoded!{% endblocktrans %}</p>
+            <div class="alert alert-info">
+                <span class="label label-important">{% blocktrans %}Important{% endblocktrans %}</span>
+                {% blocktrans %}Remember that the files should be UTF-8 encoded!{% endblocktrans %}
+            </div>
             
             
             <h5>{% blocktrans %}Exporting synonyms{% endblocktrans %}</h5>
             <p>{% blocktrans %}Thesaurus editor allows to export the synonyms in a format suitable for creating thesaurus addons for LibreOffice, Apache OpenOffice, Abiword, etc. In order to export you may press the appropiate shortcut key (look on the table at the bottom) or press with the mouse in the Export link located at the page top.{% endblocktrans %}</p>
             
-            <p><span class="label label-important">{% blocktrans %}Important{% endblocktrans %}</span> {% blocktrans with mythes_url='<a href="http://sourceforge.net/projects/hunspell/files/MyThes/">http://sourceforge.net/projects/hunspell/files/MyThes/</a>' %}For creating such addon another tool, like <strong>MyThes</strong>, should be used. Check {{ mythes_url }} for more information.{% endblocktrans %}</p>
+            <div class="alert alert-info">
+                <span class="label label-important">{% blocktrans %}Important{% endblocktrans %}</span>
+                {% blocktrans with mythes_url='<a href="http://sourceforge.net/projects/hunspell/files/MyThes/">http://sourceforge.net/projects/hunspell/files/MyThes/</a>' %}For creating such addon another tool, like <strong>MyThes</strong>, should be used. Check {{ mythes_url }} for more information.{% endblocktrans %}
+            </div>
             
             
             
