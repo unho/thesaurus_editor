@@ -293,10 +293,6 @@ body {
     margin: 0 0 15px 0;
 }
 
-#word-content .word-header h4 {
-    margin-bottom: 0;
-}
-
 
 /* Styles for highlighting the finalized words */
 h2.finalized, ul#word-list > li.finalized {
