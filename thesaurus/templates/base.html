@@ -48,19 +48,20 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
             
             <div id="word-content">
                 {% block content %}{% endblock %}
-                
-                <div class="copyright clearfix">
-                    <div class="pull-left">
-                        <strong>{% trans "Thesaurus editor - &copy; 2013" %}</strong> {% trans "by" %} <a href="mailto:leandro.regueiro@gmail.com">Leandro Regueiro</a>{% blocktrans %}. Licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU GPLv3</a> license.{% endblocktrans %}
-                    </div>
-                    <div class="pull-right">
-                        <ul>
-                            <li><a href="{% url thesaurus_help %}">{% trans "Help" %}</a></li>{% comment %}
-                            <!--<li><a href="{% url thesaurus_terms %}">{% trans "Terms of service" %}</a></li>-->{% endcomment %}
-                        </ul>
-                    </div>
-                </div>
             </div>
+        </div>
+    </div>
+    
+    
+    <div class="footer clearfix">
+        <div class="pull-left">
+            <strong>{% trans "Thesaurus editor - &copy; 2013" %}</strong> {% trans "by" %} <a href="mailto:leandro.regueiro@gmail.com">Leandro Regueiro</a>{% blocktrans %}. Licensed under the <a href="http://www.gnu.org/licenses/gpl.html">GNU GPLv3</a> license.{% endblocktrans %}
+        </div>
+        <div class="pull-right">
+            <ul>
+                <li><a href="{% url thesaurus_help %}">{% trans "Help" %}</a></li>{% comment %}
+                <!--<li><a href="{% url thesaurus_terms %}">{% trans "Terms of service" %}</a></li>-->{% endcomment %}
+            </ul>
         </div>
     </div>
     
