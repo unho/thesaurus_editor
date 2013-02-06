@@ -7,51 +7,11 @@
         }
     }, 
     {
-        "pk": "domicilio", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "edificio", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "empresa", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "familia", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "firma", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "lar", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "liñaxe", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "morada", 
+        "pk": "casal", 
         "model": "thesaurus.word", 
         "fields": {
-            "finalized": true
+            "finalized": false
         }
-    }, 
-    {
-        "pk": "vivenda", 
-        "model": "thesaurus.word", 
-        "fields": {}
     }, 
     {
         "pk": "casar", 
@@ -61,22 +21,91 @@
         }
     }, 
     {
-        "pk": "divorciarse", 
+        "pk": "casar\u00edo", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
-        "pk": "separarse", 
+        "pk": "deshabitar", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "divorciarse", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "domicilio", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "edificio", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "emparellar", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "empresa", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "familia", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "firma", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "habitar", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "lar", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
         "pk": "laranxa", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
-        "pk": "laranxeiro", 
+        "pk": "laranxada", 
         "model": "thesaurus.word", 
         "fields": {
             "finalized": true
@@ -90,88 +119,144 @@
         }
     }, 
     {
-        "pk": "laranxada", 
+        "pk": "laranxeiro", 
         "model": "thesaurus.word", 
         "fields": {
             "finalized": true
         }
     }, 
     {
-        "pk": "moral", 
+        "pk": "li\u00f1axe", 
         "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "moralista", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "moralismo", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "moralizante", 
-        "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
         "pk": "mora", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
-        "pk": "morador", 
+        "pk": "morada", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": true
+        }
     }, 
     {
         "pk": "morado", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "morador", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "moral", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "moralismo", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "moralista", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "moralizante", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
         "pk": "morar", 
         "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "vivir", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "residir", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "habitar", 
-        "model": "thesaurus.word", 
-        "fields": {}
-    }, 
-    {
-        "pk": "deshabitar", 
-        "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
         "pk": "morsa", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
         "pk": "morse", 
         "model": "thesaurus.word", 
-        "fields": {}
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "quinteiro", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "residir", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "rueiro", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "separarse", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
+    }, 
+    {
+        "pk": "vivenda", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": true
+        }
+    }, 
+    {
+        "pk": "vivir", 
+        "model": "thesaurus.word", 
+        "fields": {
+            "finalized": false
+        }
     }, 
     {
         "pk": 1, 
         "model": "thesaurus.relationship", 
         "fields": {
             "relationship_type": "S", 
-            "pos": "(noun)"
+            "pos": "noun"
         }
     }, 
     {
@@ -207,147 +292,278 @@
         }
     }, 
     {
+        "pk": 6, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "S", 
+            "pos": ""
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "S", 
+            "pos": ""
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "R", 
+            "pos": ""
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "thesaurus.relationship", 
+        "fields": {
+            "relationship_type": "S", 
+            "pos": "verb"
+        }
+    }, 
+    {
         "pk": 1, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "casa", 
-            "relationship": 1, 
-            "note": ""
+            "relationship": 1
         }
     }, 
     {
         "pk": 2, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "domicilio", 
-            "relationship": 1, 
-            "note": ""
+            "relationship": 1
         }
     }, 
     {
         "pk": 3, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "lar", 
-            "relationship": 1, 
-            "note": ""
+            "relationship": 1
         }
     }, 
     {
         "pk": 4, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "morada", 
-            "relationship": 1, 
-            "note": ""
+            "relationship": 1
         }
     }, 
     {
         "pk": 5, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "generic word", 
             "word": "vivenda", 
-            "relationship": 1, 
-            "note": "generic word"
+            "relationship": 1
         }
     }, 
     {
         "pk": 6, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "casa", 
-            "relationship": 2, 
-            "note": ""
+            "relationship": 2
         }
     }, 
     {
         "pk": 7, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "edificio", 
-            "relationship": 2, 
-            "note": ""
+            "relationship": 2
         }
     }, 
     {
         "pk": 8, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "casa", 
-            "relationship": 3, 
-            "note": ""
+            "relationship": 3
         }
     }, 
     {
         "pk": 9, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "familia", 
-            "relationship": 3, 
-            "note": ""
+            "relationship": 3
         }
     }, 
     {
         "pk": 10, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
-            "word": "liñaxe", 
-            "relationship": 3, 
-            "note": ""
+            "note": "", 
+            "word": "li\u00f1axe", 
+            "relationship": 3
         }
     }, 
     {
         "pk": 11, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "casa", 
-            "relationship": 4, 
-            "note": ""
+            "relationship": 4
         }
     }, 
     {
         "pk": 12, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "empresa", 
-            "relationship": 4, 
-            "note": ""
+            "relationship": 4
         }
     }, 
     {
         "pk": 13, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "firma", 
-            "relationship": 4, 
-            "note": ""
+            "relationship": 4
         }
     }, 
     {
         "pk": 14, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "casar", 
-            "relationship": 5, 
-            "note": ""
+            "relationship": 5
         }
     }, 
     {
         "pk": 15, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
             "word": "divorciarse", 
-            "relationship": 5, 
-            "note": ""
+            "relationship": 5
         }
     }, 
     {
-        "pk": 16, 
+        "pk": 17, 
         "model": "thesaurus.wordsforrelationship", 
         "fields": {
+            "note": "", 
+            "word": "casal", 
+            "relationship": 6
+        }
+    }, 
+    {
+        "pk": 18, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "casar\u00edo", 
+            "relationship": 6
+        }
+    }, 
+    {
+        "pk": 20, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "casal", 
+            "relationship": 7
+        }
+    }, 
+    {
+        "pk": 21, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "rueiro", 
+            "relationship": 7
+        }
+    }, 
+    {
+        "pk": 23, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "casar", 
+            "relationship": 6
+        }
+    }, 
+    {
+        "pk": 24, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "quinteiro", 
+            "relationship": 7
+        }
+    }, 
+    {
+        "pk": 25, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "casar", 
+            "relationship": 8
+        }
+    }, 
+    {
+        "pk": 26, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "emparellar", 
+            "relationship": 8
+        }
+    }, 
+    {
+        "pk": 29, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
             "word": "separarse", 
-            "relationship": 5, 
-            "note": ""
+            "relationship": 5
+        }
+    }, 
+    {
+        "pk": 30, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "habitar", 
+            "relationship": 9
+        }
+    }, 
+    {
+        "pk": 31, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "vivir", 
+            "relationship": 9
+        }
+    }, 
+    {
+        "pk": 32, 
+        "model": "thesaurus.wordsforrelationship", 
+        "fields": {
+            "note": "", 
+            "word": "morar", 
+            "relationship": 9
         }
     }, 
     {
