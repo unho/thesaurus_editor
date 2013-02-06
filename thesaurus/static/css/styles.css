@@ -150,14 +150,13 @@ body {
 }
 
 .meanings span.word {
-    display: inline-block
+    display: inline-block;
     height: 24px;
     line-height: 24px;
     position: relative;
     font-size: 11px;
     margin-bottom: 4px;
     margin-left: 20px;
-    display: inline-block;
     padding: 0 8px 0 12px;
     background: #0089e0;
     color: #fff;
@@ -263,11 +262,11 @@ body {
 }
 
 .copyright ul {
-    margin: 0; 
+    margin: 0;
 }
 
 .copyright ul li {
-    display: inline-block; 
+    display: inline-block;
 }
 
 .copyright ul li a {
