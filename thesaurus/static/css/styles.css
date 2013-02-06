@@ -280,16 +280,16 @@ body {
 }
 
 #word-content {
-    padding: 20px;
-    margin-left: 100px;
+    padding: 1.5em;
+    margin-left: 8em;
 }
 
 #word-content .word-header {
-    margin-bottom: 15px
+    margin-bottom: 1em;
 }
 
 #word-content .word-header h2 {
-    margin: 0 0 15px 0;
+    margin: 0 0 .5em 0;
 }
 
 
