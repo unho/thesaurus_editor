@@ -147,7 +147,7 @@ jQuery(document).ready(function () {
         
         // Get the data
         var url = "/relationships/create/";
-        // type can be "synonyms", "antonyms" or "related".
+        // type can be "synonyms", "antonyms" or "hypernyms".
         var data = {
             current     : current,
             new_word    : new_word,
@@ -180,12 +180,12 @@ jQuery(document).ready(function () {
         };
     });
     
-    // Add the active word from the search results list as new related word in
-    // a new related word meaning using the keyboard.
+    // Add the active word from the search results list as new hypernym in a
+    // new hypernym meaning using the keyboard.
     jQuery(document).bind('keyup', 'r', function(event) {
         // If the focus is not in the search field.
         if (jQuery(".form-search > input[type=search]").is(":not(:focus)")) {
-            add_new_meaning("related-words");
+            add_new_meaning("hypernyms");
         };
     });
     
@@ -206,7 +206,7 @@ jQuery(document).ready(function () {
         
         // Get the data.
         var url = "/relationships/addword/";
-        // type can be "synonyms", "antonyms" or "related".
+        // type can be "synonyms", "antonyms" or "hypernym".
         var data = {
             current         : current,
             new_word        : new_word,
@@ -241,7 +241,7 @@ jQuery(document).ready(function () {
                 add_new_meaning("antonyms");
                 break;
             case "R":
-                add_new_meaning("related-words");
+                add_new_meaning("hypernyms");
                 break;
             case "C":
                 add_in_selected_meaning();
@@ -272,7 +272,7 @@ jQuery(document).ready(function () {
         
         // Get the data
         var url = "/relationships/removeword/";
-        // type can be "synonyms", "antonyms" or "related".
+        // type can be "synonyms", "antonyms" or "hypernym".
         var data = {
             current         : current,
             word            : word,

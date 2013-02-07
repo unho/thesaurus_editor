@@ -34,7 +34,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
             <ul>
                 <li><strong>{% blocktrans %}Synonym{% endblocktrans %}</strong></li>
                 <li><strong>{% blocktrans %}Antonym{% endblocktrans %}</strong></li>
-                <li><strong>{% blocktrans %}Related:{% endblocktrans %}</strong>{% blocktrans %} for stablishing another kind of relationship.{% endblocktrans %}</li>
+                <li><strong>{% blocktrans %}Hypernym:{% endblocktrans %}</strong> {% blocktrans %}word whose "semantic field" includes the "semantic field" of another word.{% endblocktrans %}</li>
             </ul>
             
             <p>{% blocktrans %}For each kind of relationship type, a given word can have several different relationships or meanings, which in fact correspond to different concepts.{% endblocktrans %}</p>
@@ -126,7 +126,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                 </tr>
                 <tr>
                     <td>{% blocktrans %}R{% endblocktrans %}</td>
-                    <td>{% blocktrans %}Creates a new related words meaning and adds the active word to it.{% endblocktrans %}</td>
+                    <td>{% blocktrans %}Creates a new hypernyms meaning and adds the active word to it.{% endblocktrans %}</td>
                 </tr>
                 <tr>
                     <td>{% blocktrans %}C{% endblocktrans %}</td>

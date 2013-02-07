@@ -311,7 +311,7 @@
         "pk": 8, 
         "model": "thesaurus.relationship", 
         "fields": {
-            "relationship_type": "R", 
+            "relationship_type": "H", 
             "pos": ""
         }
     }, 

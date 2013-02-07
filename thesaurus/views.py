@@ -142,8 +142,8 @@ def ajax_create_relationship(request):
         rel_type="S"
     elif relationship_type == "antonyms":
         rel_type="A"
-    elif relationship_type == "related-words":
-        rel_type="R"
+    elif relationship_type == "hypernyms":
+        rel_type="H"
     else:
         raise Http404
     
@@ -165,7 +165,7 @@ def ajax_remove_word_from_relationship(request):
         raise Http404
     relationship_type = request.POST.get('type')
     if not (relationship_type == "synonyms" or relationship_type == "antonyms"
-            or relationship_type == "related-words"):
+            or relationship_type == "hypernyms"):
         raise Http404
     current = request.POST.get('current')
     word = request.POST.get('word')

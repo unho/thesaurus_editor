@@ -47,10 +47,10 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
             </ul>
         </div>
         
-        <h5>{% trans "Related" %}</h5>
-        <div id="related-words" class="clearfix{% if word.finalized %} finalized{% endif %}">
+        <h5>{% trans "Hypernyms" %}</h5>
+        <div id="hypernyms" class="clearfix{% if word.finalized %} finalized{% endif %}">
             <ul class="meanings">
-            {% include "related-words_snippet.html" %}
+            {% include "hypernyms_snippet.html" %}
             </ul>
         </div>
     </div>

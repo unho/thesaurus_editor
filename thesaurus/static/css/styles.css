@@ -123,8 +123,8 @@ body {
 }
 
 
-/* Styles for synonyms, antonyms and related words lists */
-#synonyms, #antonyms, #related-words {
+/* Styles for synonyms, antonyms and hypernyms lists */
+#synonyms, #antonyms, #hypernyms {
     background-color: #eee;
     -webkit-border-radius: 6px;
     -moz-border-radius: 6px;
@@ -216,15 +216,15 @@ body {
     margin-left: .5em;
 }
 
-/* Styles for synonyms, antonyms and related words that are finalized */
-#synonyms.finalized, #antonyms.finalized, #related-words.finalized {
+/* Styles for synonyms, antonyms and hypernyms that are finalized */
+#synonyms.finalized, #antonyms.finalized, #hypernyms.finalized {
     background-color: #dfd;
     border-color: #bfb;
 }
 
 /*#synonyms.finalized li.selected-meaning, */
 /*#antonyms.finalized li.selected-meaning, */
-/*#related-words.finalized li.selected-meaning {*/
+/*#hypernyms.finalized li.selected-meaning {*/
 /*    background-color: fuchsia;*/
 /*}*/
 

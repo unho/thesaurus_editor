@@ -65,7 +65,7 @@ class Word(models.Model):
         return self._retrieve_list("A")
     
     def retrieve_related_words(self):
-        return self._retrieve_list("R")
+        return self._retrieve_list("H")
     
     #def next_word(self):
     #    return 
@@ -75,7 +75,7 @@ class Relationship(models.Model):
     RELATIONSHIP_CHOICES = (
         (u'S', u'Synonym'),
         (u'A', u'Antonym'),
-        (u'R', u'Related'),
+        (u'H', u'Hypernym'),
     )
     relationship_type = models.CharField(max_length=2, choices=RELATIONSHIP_CHOICES)
     words = models.ManyToManyField(Word, through='WordsForRelationship')
