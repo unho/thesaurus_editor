@@ -64,7 +64,7 @@ class Word(models.Model):
     def retrieve_antonyms(self):
         return self._retrieve_list("A")
     
-    def retrieve_related_words(self):
+    def retrieve_hypernyms(self):
         return self._retrieve_list("H")
     
     #def next_word(self):
