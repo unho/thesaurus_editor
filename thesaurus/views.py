@@ -193,6 +193,8 @@ def ajax_add_word_to_relationship(request):
     if not request.method == 'POST':
         raise Http404
     relationship_type = request.POST.get('type')
+    if relationship_type not in ("synonyms", "antonyms", "hypernyms"):
+        raise Http404
     relationship = request.POST.get('relationship')
     current = request.POST.get('current')
     new_word = request.POST.get('new_word')
