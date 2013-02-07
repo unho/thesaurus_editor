@@ -164,8 +164,7 @@ def ajax_remove_word_from_relationship(request):
     if not request.method == 'POST':
         raise Http404
     relationship_type = request.POST.get('type')
-    if not (relationship_type == "synonyms" or relationship_type == "antonyms"
-            or relationship_type == "hypernyms"):
+    if relationship_type not in ("synonyms", "antonyms", "hypernyms"):
         raise Http404
     current = request.POST.get('current')
     word = request.POST.get('word')
