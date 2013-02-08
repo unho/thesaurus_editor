@@ -79,4 +79,10 @@ jQuery(document).ready(function () {
                 .attr("href");
         };
     });
+    
+    // Avoid visiting disabled or active links on pagination.
+    $('.pagination .disabled a, .pagination .active a').on('click',
+        function(event) {
+        event.preventDefault();
+    });
 });
