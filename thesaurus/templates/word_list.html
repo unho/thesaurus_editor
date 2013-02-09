@@ -49,13 +49,13 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                                 <li{% if not page_obj.has_previous %} class="disabled"><a href="">&laquo;</a>{% else %}><a href="{% url thesaurus_home %}?page={{ page_obj.previous_page_number }}">&laquo;</a>{% endif %}</li>
                                 {% if page_obj.number > 3 %}
                                 <li><a href="{% url thesaurus_home %}?page=1">1</a></li>
-                                <li class="disabled"><a href="">...</a></li>
+                                <li class="disabled"><a href="">&hellip;</a></li>
                                 {% endif %}
                                 {% for number in paginator.page_range %}{% if number >= page_obj.number|add:"-2" and number <= page_obj.number|add:"2" %}
                                 <li{% if page_obj.number == number %} class="active"{% endif %}><a href="{% url thesaurus_home %}?page={{ number }}">{{ number }}</a></li>{% endif %}{% endfor %}
                                 
                                 {% if page_obj.number <= paginator.num_pages|add:"-3" %}
-                                <li class="disabled"><a href="">...</a></li>
+                                <li class="disabled"><a href="">&hellip;</a></li>
                                 <li><a href="{% url thesaurus_home %}?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
                                 {% endif %}
                                 <li{% if not page_obj.has_next %} class="disabled"><a href="">&raquo;</a>{% else %}><a href="{% url thesaurus_home %}?page={{ page_obj.next_page_number }}">&raquo;</a>{% endif %}</li>
