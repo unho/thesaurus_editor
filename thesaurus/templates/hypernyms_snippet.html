@@ -16,7 +16,7 @@ You should have received a copy of the GNU General Public License along with
 Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% endcomment %}{% for relationship in word.retrieve_hypernyms %}
                 <li id="{{ relationship.pk }}"{% if selected_meaning == relationship.pk %} class="selected-meaning"{% endif %}>
-                    <strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}{% endblocktrans %}{% if relationship.pos %} ({{ relationship.pos }}){% endif %}{% trans ":" %}</strong>{% for related_word in relationship.words %}
+                    <strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}{% endblocktrans %} <span class="part-of-speech">{% if relationship.pos %}{{ relationship.pos }}{% else %}<i class="icon-edit"></i> {% trans "edit POS" %}{% endif %}</span>{% trans ":" %}</strong>{% for related_word in relationship.words %}
                     <span class="word{% if related_word.finalized %} finalized{% endif %}">
                         <a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }}</a>
                         <i class="icon-trash{% if not related_word.finalized %} icon-white{% endif %}"></i>
