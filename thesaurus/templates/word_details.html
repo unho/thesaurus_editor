@@ -33,6 +33,9 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 
 <div class="row-fluid clearfix">
     <div id="relationships" class="span6">
+        {% comment %}<!-- Modal dialog for POS editing -->{% endcomment %}
+        {% include "part_of_speech_modal_snippet.html" %}
+        
         <h5>{% trans "Synonyms" %}</h5>
         <div id="synonyms" class="clearfix{% if word.finalized %} finalized{% endif %}">
             <ul class="meanings">
@@ -84,6 +87,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
 {% endblock %}
 
 {% block additional_jquery_scripts %}
+    <script src="{{ STATIC_PREFIX }}js/libraries/bootstrap-modal.js"></script>
     <script src="{{ STATIC_PREFIX }}js/libraries/jquery.cookie.js"></script>
     <script src="{{ STATIC_PREFIX }}js/thesaurus-editor.js"></script>
 {% endblock %}

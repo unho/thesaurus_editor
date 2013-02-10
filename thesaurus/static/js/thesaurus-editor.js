@@ -371,4 +371,65 @@ jQuery(document).ready(function () {
             jQuery("body").load("/unfinalize/", {current : current});
         };
     });
+    
+    // Display modal dialog for editing the part of speech when clicking on the
+    // part of speech for a given meaning.
+    jQuery(document).on("click", ".part-of-speech", function(event) {
+        // If the meaning has a part of speech.
+        if (jQuery(this).has(".icon-edit").length == 0) {
+            // Get the part of speech and set it in the value attribute for the
+            // text input in the modal dialog.
+            jQuery("#inputPartOfSpeech").attr("value", jQuery(this).text()
+                .trim());
+        }
+        else {
+            // Remove the value attribute from #inputPartOfSpeech.
+            jQuery("#inputPartOfSpeech").removeAttr("value");
+        };
+        
+        // Include the meaning id in a hidden field in the modal dialog.
+        jQuery("#modalHiddenInput").attr("value", jQuery(this).parent()
+            .parent().attr("id"));
+        
+        // Display the modal dialog.
+        jQuery("#partOfSpeechModal").modal('show');
+    });
+    
+    // Save the new part of speech.
+    jQuery(document).on("click", "#partOfSpeechModalSave", function(event) {
+        // Get the part of speech from the text input in the modal dialog.
+        var new_pos = jQuery("#inputPartOfSpeech").attr("value");
+        
+        // Get the relationship type for the meaning in which we are modifying
+        // the part of speech.
+        var type = jQuery("li#"+ jQuery("#modalHiddenInput").attr("value"))
+            .parent().parent().attr("id");
+        
+        // Get the word in which entry are we working right now.
+        var current = jQuery("#current-word").text().trim();
+        
+        // Get the id for the meaning in which we are modifying the part of
+        // speech.
+        var relationship = jQuery("#modalHiddenInput").attr("value");
+        
+        // Get the data.
+        var url = "/partofspeech/edit/";
+        // type can be "synonyms", "antonyms" or "hypernym".
+        var data = {
+            current         : current,
+            new_pos         : new_pos,
+            relationship    : relationship,
+            type            : type
+        };
+        
+        // Remove the selected-meaning class from all the meanings.
+        jQuery("li.selected-meaning").removeClass("selected-meaning");
+        
+        // Change the meaning part of speech, and then refresh all the meanings
+        // for this type.
+        jQuery("#" + type + " > ul.meanings").load(url, data);
+        
+        // Hide the modal dialog.
+        jQuery("#partOfSpeechModal").modal('hide');
+    });
 });

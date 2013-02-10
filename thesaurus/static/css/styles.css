@@ -149,6 +149,11 @@ body {
     border-radius: 6px;
 }
 
+.meanings span.part-of-speech {
+    color: blue;
+    font-style: italic;
+}
+
 .meanings span.word {
     display: inline-block;
     height: 24px;

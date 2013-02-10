@@ -44,6 +44,10 @@ urlpatterns = patterns('thesaurus.views',
         'ajax_search',
         name='thesaurus_search'
     ),
+    url(r'^partofspeech/edit/$',
+        'ajax_edit_part_of_speech',
+        name='thesaurus_edit_part_of_speech'
+    ),
     url(r'^relationships/create/$',
         'ajax_create_relationship',
         name='thesaurus_create_relationship'

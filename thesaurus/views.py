@@ -126,6 +126,27 @@ def ajax_search(request):
                               context_instance=RequestContext(request))
 
 
+def ajax_edit_part_of_speech(request):
+    if not request.method == 'POST':
+        raise Http404
+    relationship_type = request.POST.get('type')
+    if relationship_type not in ("synonyms", "antonyms", "hypernyms"):
+        raise Http404
+    current = request.POST.get('current')
+    relationship = request.POST.get('relationship')
+    new_pos = request.POST.get('new_pos')
+    
+    # Get the objects and edit the relationship object
+    current_word_object = get_object_or_404(Word, word=current)
+    rel = get_object_or_404(Relationship, pk=relationship)
+    rel.pos = new_pos
+    rel.save()
+    
+    context = {'word': current_word_object, 'selected_meaning': rel.pk}
+    return render_to_response(relationship_type + '_snippet.html', context,
+                              context_instance=RequestContext(request))
+
+
 def ajax_create_relationship(request):
     if not request.method == 'POST':
         raise Http404

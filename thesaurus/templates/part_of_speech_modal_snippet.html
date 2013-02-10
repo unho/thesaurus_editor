@@ -1,0 +1,39 @@
+{% load i18n %}{% comment %}
+Copyright 2013 Leandro Regueiro
+
+This file is part of Thesaurus-editor.
+
+Thesaurus-editor is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+Thesaurus-editor is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
+{% endcomment %}
+        <div id="partOfSpeechModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="partOfSpeechModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">{% trans "×" %}</button>
+                <h3 id="partOfSpeechModalLabel">{% trans "Editing part of speech" %}</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" for="inputPartOfSpeech">{% trans "Part of speech" %}</label>
+                        <div class="controls">
+                            <input id="modalHiddenInput" type="hidden" value="">
+                            <input class="input-large" id="inputPartOfSpeech" type="text" placeholder="{% trans "Part of speech" %}">
+                            <span class="help-block">{% trans "Part of speech, without parentheses." %}</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">{% trans "Close" %}</button>
+                <button class="btn btn-primary" id="partOfSpeechModalSave">{% trans "Save changes" %}</button>
+            </div>
+        </div>
