@@ -108,6 +108,11 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
             <p>{% blocktrans %}Thesaurus editor allows to export the synonyms in a format suitable for creating thesaurus addons for LibreOffice, Apache OpenOffice, Abiword, etc. In order to export you may press the appropiate shortcut key (look on the table at the bottom) or press with the mouse in the Export link located at the page top.{% endblocktrans %}</p>
             
             <div class="alert alert-info">
+                <span class="label label-info">{% blocktrans %}Info{% endblocktrans %}</span>
+                {% blocktrans %}Words without synonyms are not exported.{% endblocktrans %}
+            </div>
+            
+            <div class="alert alert-info">
                 <span class="label label-important">{% blocktrans %}Important{% endblocktrans %}</span>
                 {% blocktrans with mythes_url='<a href="http://sourceforge.net/projects/hunspell/files/MyThes/">http://sourceforge.net/projects/hunspell/files/MyThes/</a>' %}For creating such addon another tool, like <strong>MyThes</strong>, should be used. Check {{ mythes_url }} for more information.{% endblocktrans %}
             </div>
