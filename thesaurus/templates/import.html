@@ -40,8 +40,6 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                         </div>
                         {% endif %}
                         
-                        {% comment %}<!-- TODO use bootstrap classes for the import form -->{% endcomment %}
-                        
                         <form class="bs-docs-example form-horizontal" enctype="multipart/form-data" action="" method="post">
                             {% csrf_token %}
                             {% for field in import_form %}
@@ -54,7 +52,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                             {% endfor %}
                             <div class="control-group">
                                 <div class="controls">
-                                    <button type="submit" class="btn pull-right">{% trans 'Import' %}</button>
+                                    <button type="submit" class="btn btn-primary">{% trans 'Import' %}</button>
                                 </div>
                             </div>
                         </form>
