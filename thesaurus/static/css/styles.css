@@ -154,6 +154,10 @@ body {
     font-style: italic;
 }
 
+.meanings span.no-pos {
+    color: red;
+}
+
 .meanings span.word {
     display: inline-block;
     height: 24px;
