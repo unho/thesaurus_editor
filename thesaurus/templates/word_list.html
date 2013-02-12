@@ -47,19 +47,19 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                         <div class="pagination pagination-centered">
                             {% comment %}<!-- TODO change code for support errors when passing a number page greater than the existing pages number -->{% endcomment %}
                             <ul>
-                                <li{% if not page_obj.has_previous %} class="disabled"><a href="">&laquo;</a>{% else %}><a href="{% url 'thesaurus_home' %}?page={{ page_obj.previous_page_number }}">&laquo;</a>{% endif %}</li>
+                                <li{% if not page_obj.has_previous %} class="disabled"><a href="">&laquo;</a>{% else %}><a href="{% url 'thesaurus_home' %}?page={{ page_obj.previous_page_number }}" rel="tooltip" data-placement="bottom" title="{% trans "Go to previous page" %}">&laquo;</a>{% endif %}</li>
                                 {% if page_obj.number > 3 %}
-                                <li><a href="{% url 'thesaurus_home' %}?page=1">1</a></li>
+                                <li><a href="{% url 'thesaurus_home' %}?page=1" rel="tooltip" data-placement="bottom" title="{% trans "Go to page 1" %}">1</a></li>
                                 <li class="disabled"><a href="">&hellip;</a></li>
                                 {% endif %}
                                 {% for number in paginator.page_range %}{% if number >= page_obj.number|add:"-2" and number <= page_obj.number|add:"2" %}
-                                <li{% if page_obj.number == number %} class="active"{% endif %}><a href="{% url 'thesaurus_home' %}?page={{ number }}">{{ number }}</a></li>{% endif %}{% endfor %}
+                                <li{% if page_obj.number == number %} class="active"{% endif %}><a href="{% url 'thesaurus_home' %}?page={{ number }}" rel="tooltip" data-placement="bottom" title="{% if page_obj.number == number %}{% trans "Current page" %}{% else %}{% blocktrans with page_number=number %}Go to page {{ page_number }}{% endblocktrans %}{% endif %}">{{ number }}</a></li>{% endif %}{% endfor %}
                                 
                                 {% if page_obj.number <= paginator.num_pages|add:"-3" %}
                                 <li class="disabled"><a href="">&hellip;</a></li>
-                                <li><a href="{% url 'thesaurus_home' %}?page={{ paginator.num_pages }}">{{ paginator.num_pages }}</a></li>
+                                <li><a href="{% url 'thesaurus_home' %}?page={{ paginator.num_pages }}" rel="tooltip" data-placement="bottom" title="{% blocktrans with page_number=paginator.num_pages %}Go to page {{ page_number }}{% endblocktrans %}">{{ paginator.num_pages }}</a></li>
                                 {% endif %}
-                                <li{% if not page_obj.has_next %} class="disabled"><a href="">&raquo;</a>{% else %}><a href="{% url 'thesaurus_home' %}?page={{ page_obj.next_page_number }}">&raquo;</a>{% endif %}</li>
+                                <li{% if not page_obj.has_next %} class="disabled"><a href="">&raquo;</a>{% else %}><a href="{% url 'thesaurus_home' %}?page={{ page_obj.next_page_number }}" rel="tooltip" data-placement="bottom" title="{% trans "Go to next page" %}">&raquo;</a>{% endif %}</li>
                             </ul>
                         </div>
                         {% endif %}
