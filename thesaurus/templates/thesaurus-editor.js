@@ -227,7 +227,7 @@ jQuery(document).ready(function () {
     
     // Add the active word from the search results list as new synonym in a new
     // synonym meaning using the mouse.
-    $(document).on("click", "#results-list button", function(event) {
+    jQuery(document).on("click", "#results-list button", function(event) {
         event.preventDefault();
         
         // Get the clicked button text.
@@ -286,7 +286,8 @@ jQuery(document).ready(function () {
     }
     
     // Remove the word which delete button was pressed from the relationship.
-    $(document).on("click", ".meanings span.word i.icon-trash", remove_word);
+    jQuery(document).on("click", ".meanings span.word i.icon-trash",
+        remove_word);
     
     // Select the next meaning, independently of the relationship type, if it
     // is not the last meaning, or the first meaning if no meaning is selected,
