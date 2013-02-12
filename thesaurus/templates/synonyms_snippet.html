@@ -1,4 +1,4 @@
-{% load i18n %}{% comment %}
+{% load i18n %}{% load url from future %}{% comment %}
 Copyright 2013 Leandro Regueiro
 
 This file is part of Thesaurus-editor.
@@ -18,7 +18,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
                 <li id="{{ relationship.pk }}"{% if forloop.first and not selected_meaning %} class="selected-meaning"{% elif selected_meaning == relationship.pk %} class="selected-meaning"{% endif %}>
                     <strong>{% blocktrans with number=forloop.counter %}Meaning {{ number }}{% endblocktrans %} <span class="part-of-speech{% if relationship.pos %}">{{ relationship.pos }}{% else %} no-pos"><i class="icon-edit"></i> {% trans "edit POS" %}{% endif %}</span>{% trans ":" %}</strong>{% for related_word in relationship.words %}
                     <span class="word{% if related_word.finalized %} finalized{% endif %}">
-                        <a href="{% url thesaurus_word pk=related_word.pk %}">{{ related_word }}</a>
+                        <a href="{% url 'thesaurus_word' pk=related_word.pk %}">{{ related_word }}</a>
                         <i class="icon-trash{% if not related_word.finalized %} icon-white{% endif %}"></i>
                     </span>{% endfor %}
                 </li>{% empty %}

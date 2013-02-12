@@ -1,4 +1,4 @@
-{% load i18n %}{% load static %}{% get_static_prefix as STATIC_PREFIX %}{% comment %}
+{% load i18n %}{% load url from future %}{% load static %}{% get_static_prefix as STATIC_PREFIX %}{% comment %}
 Copyright 2013 Leandro Regueiro
 
 This file is part of Thesaurus-editor.
@@ -27,15 +27,15 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
     
     <div class="navbar navbar-fixed-top navbar-inverse">
         <div class="navbar-inner">
-            <a class="brand" href="{% url thesaurus_home %}">{% trans "Thesaurus editor" %}</a>
+            <a class="brand" href="{% url 'thesaurus_home' %}">{% trans "Thesaurus editor" %}</a>
             <div class="nav-collapse" id="main-menu">
                 <ul class="nav" id="main-menu-left">
-                    <li><a href="{% url thesaurus_export %}"><i class="icon-download-alt icon-white"></i> {% trans "Export synonyms" %}</a></li>
-                    <li><a href="{% url thesaurus_import %}"><i class="icon-upload icon-white"></i> {% trans "Import word list" %}</a></li>
+                    <li><a href="{% url 'thesaurus_export' %}"><i class="icon-download-alt icon-white"></i> {% trans "Export synonyms" %}</a></li>
+                    <li><a href="{% url 'thesaurus_import' %}"><i class="icon-upload icon-white"></i> {% trans "Import word list" %}</a></li>
                 </ul>
                 <ul class="nav nav-secondary pull-right">
                     <li>
-                        <a href="{% url thesaurus_help %}" id="show-help"><i class="icon-info-sign icon-white"></i> {% trans "Help" %}</a>
+                        <a href="{% url 'thesaurus_help' %}" id="show-help"><i class="icon-info-sign icon-white"></i> {% trans "Help" %}</a>
                     </li>
                 </ul>
             </div>
@@ -57,8 +57,8 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
         </div>
         <div class="pull-right">
             <ul>
-                <li><a href="{% url thesaurus_help %}">{% trans "Help" %}</a></li>{% comment %}
-                <!--<li><a href="{% url thesaurus_terms %}">{% trans "Terms of service" %}</a></li>-->{% endcomment %}
+                <li><a href="{% url 'thesaurus_help' %}">{% trans "Help" %}</a></li>{% comment %}
+                <!--<li><a href="{% url 'thesaurus_terms_of_service' %}">{% trans "Terms of service" %}</a></li>-->{% endcomment %}
             </ul>
         </div>
     </div>
@@ -68,7 +68,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
     <script src="{{ STATIC_PREFIX }}js/libraries/bootstrap.min.js"></script>
     <script src="{{ STATIC_PREFIX }}js/libraries/bootstrap-tooltip.js"></script>
     <script src="{{ STATIC_PREFIX }}js/libraries/jquery.hotkeys.js"></script>
-    <script src="{% url thesaurus_common_javascript %}"></script>
+    <script src="{% url 'thesaurus_common_javascript' %}"></script>
     {% block additional_jquery_scripts %}{% endblock %}
 </body>
 </html>
