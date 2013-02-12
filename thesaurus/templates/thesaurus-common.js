@@ -1,4 +1,4 @@
-// Copyright 2013 Leandro Regueiro
+{% load url from future %}// Copyright 2013 Leandro Regueiro
 // 
 // This file is part of Thesaurus-editor.
 // 
@@ -23,7 +23,7 @@ jQuery(document).ready(function () {
     
     // Go to word list when hitting Home key.
     jQuery(document).bind('keyup', 'home', function(event) {
-        window.location.href = "/";
+        window.location.href = "{% url 'thesaurus_home' %}";
     });
     
     // Go to the import page when hitting I (and not having the focus on the

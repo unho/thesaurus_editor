@@ -1,4 +1,4 @@
-// Copyright 2013 Leandro Regueiro
+{% load url from future %}// Copyright 2013 Leandro Regueiro
 // 
 // This file is part of Thesaurus-editor.
 // 
@@ -40,8 +40,8 @@ jQuery(document).ready(function () {
     // Get the search results and show them.
     function ajax_search(word) {
         if (word) {
-            var url = "/search/?word=" + word + "&current=" +
-                jQuery("#current-word").text().trim();
+            var url = "{% url 'thesaurus_search' %}?word=" + word +
+                "&current=" + jQuery("#current-word").text().trim();
             jQuery("#results-list").load(url);
             
             // Enable tooltips again, since new buttons are loaded.
@@ -146,7 +146,7 @@ jQuery(document).ready(function () {
             .first().text().trim();
         
         // Get the data
-        var url = "/relationships/create/";
+        var url = "{% url 'thesaurus_create_relationship' %}";
         // type can be "synonyms", "antonyms" or "hypernyms".
         var data = {
             current     : current,
@@ -205,7 +205,7 @@ jQuery(document).ready(function () {
         var relationship = jQuery("li.selected-meaning").attr("id");
         
         // Get the data.
-        var url = "/relationships/addword/";
+        var url = "{% url 'thesaurus_add_word_to_relationship' %}";
         // type can be "synonyms", "antonyms" or "hypernym".
         var data = {
             current         : current,
@@ -271,7 +271,7 @@ jQuery(document).ready(function () {
         */
         
         // Get the data
-        var url = "/relationships/removeword/";
+        var url = "{% url 'thesaurus_remove_word_from_relationship' %}";
         // type can be "synonyms", "antonyms" or "hypernym".
         var data = {
             current         : current,
@@ -355,7 +355,8 @@ jQuery(document).ready(function () {
             
             // Mark the current word as finalized. After that reload the word
             // details page.
-            jQuery("body").load("/finalize/", {current : current});
+            jQuery("body").load("{% url 'thesaurus_finalize_word' %}",
+                {current : current});
         };
     });
     
@@ -368,7 +369,8 @@ jQuery(document).ready(function () {
             
             // Mark the current word as not finalized. After that reload the
             // word details page.
-            jQuery("body").load("/unfinalize/", {current : current});
+            jQuery("body").load("{% url 'thesaurus_unfinalize_word' %}",
+                {current : current});
         };
     });
     
@@ -413,7 +415,7 @@ jQuery(document).ready(function () {
         var relationship = jQuery("#modalHiddenInput").attr("value");
         
         // Get the data.
-        var url = "/partofspeech/edit/";
+        var url = "{% url 'thesaurus_edit_part_of_speech' %}";
         // type can be "synonyms", "antonyms" or "hypernym".
         var data = {
             current         : current,
