@@ -68,7 +68,7 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
     <script src="{{ STATIC_PREFIX }}js/libraries/bootstrap.min.js"></script>
     <script src="{{ STATIC_PREFIX }}js/libraries/bootstrap-tooltip.js"></script>
     <script src="{{ STATIC_PREFIX }}js/libraries/jquery.hotkeys.js"></script>
-    <script src="{{ STATIC_PREFIX }}js/thesaurus-editor.common.js"></script>
+    <script src="{% url thesaurus_common_javascript %}"></script>
     {% block additional_jquery_scripts %}{% endblock %}
 </body>
 </html>

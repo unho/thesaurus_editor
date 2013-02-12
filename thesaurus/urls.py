@@ -72,6 +72,14 @@ urlpatterns = patterns('thesaurus.views',
         TemplateView.as_view(template_name="help.html"),
         name='thesaurus_help'
     ),
+    url(r'^js/thesaurus-editor.js$',
+        TemplateView.as_view(template_name="thesaurus-editor.js"),
+        name='thesaurus_editor_javascript'
+    ),
+    url(r'^js/thesaurus-common.js$',
+        TemplateView.as_view(template_name="thesaurus-common.js"),
+        name='thesaurus_common_javascript'
+    ),
     #TODO terms of service
 )
 
