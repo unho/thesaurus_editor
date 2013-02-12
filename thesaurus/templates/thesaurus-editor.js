@@ -398,11 +398,8 @@ jQuery(document).ready(function () {
         jQuery("#partOfSpeechModal").modal('show');
     });
     
-    // Save the new part of speech.
-    jQuery(document).on("click", "#partOfSpeechModalSave", function(event) {
-        // Get the part of speech from the text input in the modal dialog.
-        var new_pos = jQuery("#inputPartOfSpeech").attr("value");
-        
+    // Edit the part of speech using the passed value.
+    function edit_part_of_speech(new_pos) {
         // Get the relationship type for the meaning in which we are modifying
         // the part of speech.
         var type = jQuery("li#"+ jQuery("#modalHiddenInput").attr("value"))
@@ -434,5 +431,18 @@ jQuery(document).ready(function () {
         
         // Hide the modal dialog.
         jQuery("#partOfSpeechModal").modal('hide');
+    }
+    
+    // Save the new part of speech.
+    jQuery(document).on("click", "#partOfSpeechModalSave", function(event) {
+        // Edit the part of speech using the text input value in the modal
+        // dialog.
+        edit_part_of_speech(jQuery("#inputPartOfSpeech").attr("value"));
+    });
+    
+    // Remove the part of speech.
+    jQuery(document).on("click", "#partOfSpeechModalRemove", function(event) {
+        // Edit the part of speech using a blank string.
+        edit_part_of_speech("");
     });
 });
