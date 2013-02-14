@@ -24,4 +24,4 @@ In order to locally install Thesaurus_editor you have to follow this steps:
   superuser now question).
 - Run 'python manage.py runserver' on the terminal.
 - Open a browser and visit
-  `http://127.0.0.1:8000/ <http://http://127.0.0.1:8000/>`_.
+  `127.0.0.1:8000 <http://http://127.0.0.1:8000/>`_.
