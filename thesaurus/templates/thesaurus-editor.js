@@ -402,7 +402,7 @@ jQuery(document).ready(function () {
     function edit_part_of_speech(new_pos) {
         // Get the relationship type for the meaning in which we are modifying
         // the part of speech.
-        var type = jQuery("li#"+ jQuery("#modalHiddenInput").attr("value"))
+        var type = jQuery("li#" + jQuery("#modalHiddenInput").attr("value"))
             .parent().parent().attr("id");
         
         // Get the word in which entry are we working right now.
