@@ -1,0 +1,41 @@
+{% load i18n %}{% comment %}
+Copyright 2013 Leandro Regueiro
+
+This file is part of Thesaurus-editor.
+
+Thesaurus-editor is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+Thesaurus-editor is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
+{% endcomment %}        <ul id="myTab" class="nav nav-tabs">
+            <li class="active"><a href="#server-search" data-toggle="tab">{% trans "Search" %}</a></li>
+            {% comment %}<!-- TODO --><!--<li><a href="#suggestions" data-toggle="tab">Suggestions</a></li>-->{% endcomment %}
+        </ul>
+        <div class="tab-content">
+            <div id="server-search" class="tab-pane active">
+                {% comment %}<!-- TODO --><!--<div class="loading">{% trans "Loading..." %}</div>-->{% endcomment %}
+                <div class="input-append">
+                    <form class="form-search">
+                        <input type="search" id="appendedInputButton" class="input-medium" placeholder="{% trans "Search for a word..." %}">
+                        <button type="submit" class="btn">{% trans "Search" %}</button>
+                    </form>
+                </div>
+                
+                <ul id="results-list" class="nav nav-list bs-docs-sidenav">
+                </ul>
+            </div>
+            
+            {% comment %}
+            <div id="suggestions" class="tab-pane">
+                 <!--TODO MySQL levenshtein distance: http://www.jisaacks.com/find-similar-products-in-mysql-using-levenshtein-distance -->
+                <div class="loading">{% trans "Loading..." %}</div>
+            </div>
+            {% endcomment %}
+        </div>

@@ -59,30 +59,8 @@ Thesaurus-editor. If not, see <http://www.gnu.org/licenses/>.
         </div>
     </div>
     
-    <div class="span6" id="word-provider">
-        <ul class="nav nav-tabs" id="myTab">
-            <li class="active"><a href="#server" data-toggle="tab">{% trans "Search" %}</a></li>
-            {% comment %}<!--<li><a href="#suggestions" data-toggle="tab">Suggestions</a></li>--><!-- TODO -->{% endcomment %}
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane active" id="server">
-                {% comment %}<!--<div class="loading">{% trans "Loading..." %}</div>-->{% endcomment %}
-                <div class="input-append">
-                    <form class="form-search">
-                        <input type="search" class="input-medium" id="appendedInputButton" placeholder="{% trans "Search for a word..." %}">
-                        <button type="submit" class="btn">{% trans "Search" %}</button>
-                    </form>
-                </div>
-                
-                <ul id="results-list" class="nav nav-list bs-docs-sidenav">
-                </ul>
-            </div>
-            
-            <div class="tab-pane" id="suggestions">
-                 {% comment %}<!--TODO MySQL levenshtein distance: http://www.jisaacks.com/find-similar-products-in-mysql-using-levenshtein-distance -->{% endcomment %}
-                <div class="loading">{% trans "Loading..." %}</div>
-            </div>
-        </div>
+    <div id="word-provider" class="span6">
+        {% include "search_snippet.html" %}
     </div>
 </div>
 {% endblock %}
